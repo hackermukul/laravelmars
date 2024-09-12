@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image as Image;
-
+ 
 use DB;
 use Session;
 use App\libraries\FunctionModel;
