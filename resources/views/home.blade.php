@@ -101,7 +101,7 @@
                               <img src="assets/front/img/icon/sve-icon4.png" alt="icon01">
                            </div>
                            <div class="text">
-                              <h5><a href="#">Knowledge Bureau</a></h5>
+                              <h5><a href="#">Knowledge          jj Bureau</a></h5>
                               <p>Accurate information to satisfy all the needs of our clients.</p>
                            </div>
                         </div>
