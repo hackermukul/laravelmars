@@ -3,7 +3,7 @@
     <!-- slider-area -->
     <section id="home" class="slider-area fix p-relative">
             <div class="slider-active" style="background: #141b22;">
-               <div class="single-slider slider-bg" style="background-image: url(build/build/assets/front/img/slider/slider_bg_01.png); background-size: cover;">
+               <div class="single-slider slider-bg" style="background-image: url(build/assets/front/img/slider/slider_bg_01.png); background-size: cover;">
                   <div class="container">
                      <div class="row">
                         <div class="col-lg-7 col-md-7">
@@ -22,7 +22,7 @@
                      </div>
                   </div>
                </div>
-               <div class="single-slider slider-bg" style="background-image: url(build/build/assets/front/img/slider/slider_bg.png); background-size: cover;">
+               <div class="single-slider slider-bg" style="background-image: url(build/assets/front/img/slider/slider_bg.png); background-size: cover;">
                   <div class="container">
                      <div class="row">
                         <div class="col-lg-7 col-md-7">
@@ -52,7 +52,7 @@
                      <div class="services-box07">
                         <div class="sr-contner">
                            <div class="icon">
-                              <img src="build/build/assets/front/img/icon/sve-icon4.png" alt="icon01">
+                              <img src="build/assets/front/img/icon/sve-icon4.png" alt="icon01">
                            </div>
                            <div class="text">
                               <h5><a href="#">Knowledge Bureau</a></h5>
