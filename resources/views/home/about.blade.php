@@ -1,7 +1,7 @@
 @section('title', 'About Page')
 <x-base-layout>
  <!-- breadcrumb-area -->
-    <section class="breadcrumb-area d-flex  p-relative align-items-center" style="background-image:url(assets/front/img/bg/bdrc-bg.png)">
+    <section class="breadcrumb-area d-flex  p-relative align-items-center" style="background-image:url(build/assets/front/img/bg/bdrc-bg.png)">
 
         <div class="container">
             <div class="row align-items-center">
@@ -29,12 +29,12 @@
     <!-- breadcrumb-area-end -->
       <!-- about-area -->
     <section class="about-area about-p pt-120 pb-120 p-relative fix">
-        <div class="animations-02"><img src="assets/front/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
+        <div class="animations-02"><img src="build/assets/front/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
         <div class="container">
             <div class="row justify-content-center align-items-center">
                  <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                        <img src="assets/front/img/features/about_img_05.png" alt="img">
+                        <img src="build/assets/front/img/features/about_img_05.png" alt="img">
                        <div class="about-text second-about three-about">
                             <span>25 <sub>+</sub></span>
                             <p>Years of Experience</p>
@@ -71,7 +71,7 @@
     </section>
     <!-- about-area-end -->
     <!-- cta-area -->
-    <section class="cta-area cta-bg pt-50 pb-50" style="background-image:url(assets/front/img/bg/cta_bg02.png)">
+    <section class="cta-area cta-bg pt-50 pb-50" style="background-image:url(build/assets/front/img/bg/cta_bg02.png)">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -93,8 +93,8 @@
     <!-- cta-area-end -->
    <!-- frequently-area -->
     <section class="faq-area pt-120 pb-120 p-relative fix">
-        <div class="animations-10"><img src="assets/front/img/bg/an-img-04.png" alt="an-img-01"></div>
-        <div class="animations-08"><img src="assets/front/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
+        <div class="animations-10"><img src="build/assets/front/img/bg/an-img-04.png" alt="an-img-01"></div>
+        <div class="animations-08"><img src="build/assets/front/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
         <div class="container">
             <div class="row justify-content-center  align-items-center">
 
@@ -218,14 +218,14 @@
     <!-- frequently-area-end -->
    <!-- steps-area -->
     <section class="steps-area2 p-relative fix"  style="background-color: #125875;">
-        <div class="animations-02"><img src="assets/front/img/bg/an-img-10.png" alt="an-img-01"></div>
+        <div class="animations-02"><img src="build/assets/front/img/bg/an-img-10.png" alt="an-img-01"></div>
         <div class="container">
 
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="step-box step-box2 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                         <div class="dnumber">
-                            <div class="date-box"><img src="assets/front/img/icon/fea-icon01.png" alt="icon"></div>
+                            <div class="date-box"><img src="build/assets/front/img/icon/fea-icon01.png" alt="icon"></div>
                         </div>
                         <div class="text">
                             <h2>Why you choose Radiant Transcript</h2>
@@ -235,7 +235,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="step-img2 wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                        <img src="assets/front/img/bg/steps-img-2.png" alt="class image">
+                        <img src="build/assets/front/img/bg/steps-img-2.png" alt="class image">
                     </div>
 
                 </div>
@@ -250,18 +250,18 @@
      <!-- steps-area -->
     <!-- <section class="steps-area2 p-relative fix"  style="background-color: #032e3f;">
         <div class="container">
-            <div class="animations-08"><img src="https://radianttranscripts.com/assets/front/img/bg/an-img-20.png" alt="contact-bg-an-01"></div>
+            <div class="animations-08"><img src="https://radianttranscripts.com/build/assets/front/img/bg/an-img-20.png" alt="contact-bg-an-01"></div>
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="step-img3 wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                        <img src="https://radianttranscripts.com/assets/front/img/bg/steps-img-3.png" alt="class image">
+                        <img src="https://radianttranscripts.com/build/assets/front/img/bg/steps-img-3.png" alt="class image">
                     </div>
 
                 </div>
                  <div class="col-lg-6 col-md-12">
                     <div class="step-box step-box3 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                         <div class="dnumber">
-                            <div class="date-box"><img src="https://radianttranscripts.com/assets/front/img/icon/fea-icon03.png" alt="icon"></div>
+                            <div class="date-box"><img src="https://radianttranscripts.com/build/assets/front/img/icon/fea-icon03.png" alt="icon"></div>
                         </div>
                         <div class="text">
                             <h2>Powerful Alumni</h2>
@@ -285,27 +285,27 @@
             <div class="row brand-active">
                 <div class="col-xl-2">
                     <div class="single-brand">
-                        <img src="assets/front/img/clients/c1.png" alt="img">
+                        <img src="build/assets/front/img/clients/c1.png" alt="img">
                     </div>
                 </div>
                 <div class="col-xl-2">
                     <div class="single-brand">
-                         <img src="assets/front/img/clients/c2.png" alt="img">
+                         <img src="build/assets/front/img/clients/c2.png" alt="img">
                     </div>
                 </div>
                 <div class="col-xl-2">
                     <div class="single-brand">
-                         <img src="assets/front/img/clients/c3.png" alt="img">
+                         <img src="build/assets/front/img/clients/c3.png" alt="img">
                     </div>
                 </div>
                 <div class="col-xl-2">
                     <div class="single-brand">
-                          <img src="assets/front/img/clients/c4.png" alt="img">
+                          <img src="build/assets/front/img/clients/c4.png" alt="img">
                     </div>
                 </div>
                <!--  <div class="col-xl-2">
                     <div class="single-brand">
-                         <img src="https://radianttranscripts.com/assets/front/img/client/c5.png" alt="img">
+                         <img src="https://radianttranscripts.com/build/assets/front/img/client/c5.png" alt="img">
                     </div>
                 </div> -->
             </div>

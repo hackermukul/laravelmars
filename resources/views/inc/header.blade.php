@@ -20,7 +20,7 @@
                                    <li>
                                       <div class="call-box">
                                          <div class="icon">
-                                            <img src="assets/front/img/icon/phone-call.png" alt="img">
+                                            <img src="build/assets/front/img/icon/phone-call.png" alt="img">
                                          </div>
                                          <div class="text">
                                             <span>Call Now !</span>
@@ -31,7 +31,7 @@
                                    <li>
                                       <div class="call-box">
                                          <div class="icon">
-                                            <img src="assets/front/img/icon/mailing.png" alt="img">
+                                            <img src="build/assets/front/img/icon/mailing.png" alt="img">
                                          </div>
                                          <div class="text">
                                             <span>Email Now</span>
@@ -52,7 +52,7 @@
                         <div class="row align-items-center">
                              <div class="col-xl-3 col-lg-3">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/front/img/rad.png" alt="logo"></a>
+                                    <a href="index.html"><img src="build/assets/front/img/rad.png" alt="logo"></a>
                                 </div>
                             </div>
                            <div class="col-xl-7 col-lg-7">
