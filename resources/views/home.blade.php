@@ -155,7 +155,7 @@
                   <div class="col-lg-6 col-md-12 col-sm-12">
                      <div class="about-content s-about-content pl-15 wow fadeInRight  animated" data-animation="fadeInRight" data-delay=".4s">
                         <div class="about-title second-title pb-25">
-                           <h5><i class="fal fa-graduation-cap"></i> About Our Radiant Transcripts</h5>
+                           <h5><i class="fal fa-graduation-cap"></i> About Our  Transcripts</h5>
                            <h2>A Few Words About</h2>
                         </div>
                         <p class="txt-clr">Radiant Transcripts is one of the leading and best academic certificate attestations Company based in Bangalore and having its wings spread across all over India. Radiant Transcripts has been and will continue to be a pillar of trust for our valued customers. The streamlined process makes our users to experience a transparent process evading chaos, who are unable to visit Universities due to their personal and professional engagements. Radiant Transcripts takes care of your documentation needs without any hassles by saving your valuable time and energy, while you work on your for immigration process, We help in procuring credential verification / attestation / transcripts for ECE, WES, IQAS, ICES, CES, ICAS, PEBEC, NDEB, NASBA, etc.,
