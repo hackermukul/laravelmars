@@ -152,6 +152,7 @@
                         </div>
                      </div>
                   </div>
+                  
                   <div class="col-lg-6 col-md-12 col-sm-12">
                      <div class="about-content s-about-content pl-15 wow fadeInRight  animated" data-animation="fadeInRight" data-delay=".4s">
                         <div class="about-title second-title pb-25">
