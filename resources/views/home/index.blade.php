@@ -3,7 +3,7 @@
     <!-- slider-area -->
     <section id="home" class="slider-area fix p-relative">
             <div class="slider-active" style="background: #141b22;">
-               <div class="single-slider slider-bg" style="background-image: url(assets/front/img/slider/slider_bg_01.png); background-size: cover;">
+               <div class="single-slider slider-bg" style="background-image: url(build/build/assets/front/img/slider/slider_bg_01.png); background-size: cover;">
                   <div class="container">
                      <div class="row">
                         <div class="col-lg-7 col-md-7">
@@ -22,7 +22,7 @@
                      </div>
                   </div>
                </div>
-               <div class="single-slider slider-bg" style="background-image: url(assets/front/img/slider/slider_bg.png); background-size: cover;">
+               <div class="single-slider slider-bg" style="background-image: url(build/build/assets/front/img/slider/slider_bg.png); background-size: cover;">
                   <div class="container">
                      <div class="row">
                         <div class="col-lg-7 col-md-7">
@@ -52,7 +52,7 @@
                      <div class="services-box07">
                         <div class="sr-contner">
                            <div class="icon">
-                              <img src="assets/front/img/icon/sve-icon4.png" alt="icon01">
+                              <img src="build/build/assets/front/img/icon/sve-icon4.png" alt="icon01">
                            </div>
                            <div class="text">
                               <h5><a href="#">Knowledge Bureau</a></h5>
@@ -65,7 +65,7 @@
                      <div class="services-box07 active">
                         <div class="sr-contner">
                            <div class="icon">
-                              <img src="assets/front/img/icon/sve-icon5.png" alt="icon01">
+                              <img src="build/assets/front/img/icon/sve-icon5.png" alt="icon01">
                            </div>
                            <div class="text">
                               <h5><a href="#">Client Oriented</a></h5>
@@ -78,7 +78,7 @@
                      <div class="services-box07">
                         <div class="sr-contner">
                            <div class="icon">
-                              <img src="assets/front/img/icon/sve-icon6.png" alt="icon01">
+                              <img src="build/assets/front/img/icon/sve-icon6.png" alt="icon01">
                            </div>
                            <div class="text">
                               <h5><a href="#">Achievements</a></h5>
@@ -93,12 +93,12 @@
          <!-- service-details2-area-end -->
          <!-- about-area -->
          <section class="about-area about-p pt-120 pb-120 p-relative fix" style="background: #eff7ff;">
-            <div class="animations-02"><img src="assets/front/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
+            <div class="animations-02"><img src="build/assets/front/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
             <div class="container">
                <div class="row justify-content-center align-items-center">
                   <div class="col-lg-6 col-md-12 col-sm-12">
                      <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                        <img src="assets/front/img/features/about_img_02.png" alt="img">
+                        <img src="build/assets/front/img/features/about_img_02.png" alt="img">
                         <div class="about-text second-about">
                            <span>5 <sub>+</sub></span>
                            <p>Years of Experience</p>
@@ -150,7 +150,7 @@
          <!-- about-area-end -->
          <!-- courses-area -->
          <section class="courses pt-120 pb-120 p-relative fix">
-            <div class="animations-01"><img src="assets/front/img/bg/an-img-03.png" alt="an-img-01"></div>
+            <div class="animations-01"><img src="build/assets/front/img/bg/an-img-03.png" alt="an-img-01"></div>
             <div class="container">
                <div class="row">
                   <div class="col-lg-12 p-relative">
@@ -166,7 +166,7 @@
                   <div class="col-lg-4 col-md-6 ">
                      <div class="courses-item mb-30 hover-zoomin">
                         <div class="thumb fix">
-                           <a href="#"><img src="assets/front/img/s1.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/s1.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="courses-content">
                            <div class="cat"><i class="fal fa-graduation-cap"></i> Radiant Transcripts</div>
@@ -175,14 +175,14 @@
                            <a href="#" class="readmore">Read More <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                         <div class="icon">
-                           <img src="assets/front/img/icon/cou-icon.png" alt="img">
+                           <img src="build/assets/front/img/icon/cou-icon.png" alt="img">
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 ">
                      <div class="courses-item mb-30 hover-zoomin">
                         <div class="thumb fix">
-                           <a href="#"><img src="assets/front/img/s2.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/s2.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="courses-content">
                            <div class="cat"><i class="fal fa-graduation-cap"></i> Radiant Transcripts</div>
@@ -191,14 +191,14 @@
                            <a href="#" class="readmore">Read More <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                         <div class="icon">
-                           <img src="assets/front/img/icon/cou-icon.png" alt="img">
+                           <img src="build/assets/front/img/icon/cou-icon.png" alt="img">
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 ">
                      <div class="courses-item mb-30 hover-zoomin">
                         <div class="thumb fix">
-                           <a href="#"><img src="assets/front/img/s3.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/s3.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="courses-content">
                            <div class="cat"><i class="fal fa-graduation-cap"></i> Radiant Transcripts</div>
@@ -207,14 +207,14 @@
                            <a href="#" class="readmore">Read More <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                         <div class="icon">
-                           <img src="assets/front/img/icon/cou-icon.png" alt="img">
+                           <img src="build/assets/front/img/icon/cou-icon.png" alt="img">
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 ">
                      <div class="courses-item mb-30 hover-zoomin">
                         <div class="thumb fix">
-                           <a href="#"><img src="assets/front/img/s14.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/s14.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="courses-content">
                            <div class="cat"><i class="fal fa-graduation-cap"></i> Radiant Transcripts</div>
@@ -223,14 +223,14 @@
                            <a href="#" class="readmore">Read More <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                         <div class="icon">
-                           <img src="assets/front/img/icon/cou-icon.png" alt="img">
+                           <img src="build/assets/front/img/icon/cou-icon.png" alt="img">
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 ">
                      <div class="courses-item mb-30 hover-zoomin">
                         <div class="thumb fix">
-                           <a href="#"><img src="assets/front/img/s15.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/s15.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="courses-content">
                            <div class="cat"><i class="fal fa-graduation-cap"></i> Radiant Transcripts</div>
@@ -239,14 +239,14 @@
                            <a href="#" class="readmore">Read More <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                         <div class="icon">
-                           <img src="assets/front/img/icon/cou-icon.png" alt="img">
+                           <img src="build/assets/front/img/icon/cou-icon.png" alt="img">
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 ">
                      <div class="courses-item mb-30 hover-zoomin">
                         <div class="thumb fix">
-                           <a href="#"><img src="assets/front/img/s6.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/s6.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="courses-content">
                            <div class="cat"><i class="fal fa-graduation-cap"></i> Radiant Transcripts</div>
@@ -255,7 +255,7 @@
                            <a href="#" class="readmore">Read More <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                         <div class="icon">
-                           <img src="assets/front/img/icon/cou-icon.png" alt="img">
+                           <img src="build/assets/front/img/icon/cou-icon.png" alt="img">
                         </div>
                      </div>
                   </div>
@@ -265,7 +265,7 @@
          <!-- courses-area -->
          <!-- steps-area -->
          <section class="steps-area p-relative"  style="background-color: #032e3f;">
-            <div class="animations-10"><img src="assets/front/img/bg/an-img-10.png" alt="an-img-01"></div>
+            <div class="animations-10"><img src="build/assets/front/img/bg/an-img-10.png" alt="an-img-01"></div>
             <div class="container">
                <div class="row align-items-center">
                   <div class="col-lg-6 col-md-12">
@@ -277,7 +277,7 @@
                         <li>
                            <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                               <div class="dnumber">
-                                 <div class="date-box"><img src="assets/front/img/icon/fea-icon01.png" alt="icon"></div>
+                                 <div class="date-box"><img src="build/assets/front/img/icon/fea-icon01.png" alt="icon"></div>
                               </div>
                               <div class="text">
                                  <h3>Skilled Teachers</h3>
@@ -287,7 +287,7 @@
                         <li>
                            <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                               <div class="dnumber">
-                                 <div class="date-box"><img src="assets/front/img/icon/fea-icon02.png" alt="icon"></div>
+                                 <div class="date-box"><img src="build/assets/front/img/icon/fea-icon02.png" alt="icon"></div>
                               </div>
                               <div class="text">
                                  <h3>Affordable Price</h3>
@@ -297,7 +297,7 @@
                         <li>
                            <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                               <div class="dnumber">
-                                 <div class="date-box"><img src="assets/front/img/icon/fea-icon03.png" alt="icon"></div>
+                                 <div class="date-box"><img src="build/assets/front/img/icon/fea-icon03.png" alt="icon"></div>
                               </div>
                               <div class="text">
                                  <h3>Efficient & Flexible</h3>
@@ -308,7 +308,7 @@
                   </div>
                   <div class="col-lg-6 col-md-12">
                      <div class="step-img wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                        <img src="assets/front/img/bg/steps-img.png" alt="class image">
+                        <img src="build/assets/front/img/bg/steps-img.png" alt="class image">
                      </div>
                   </div>
                </div>
@@ -317,10 +317,10 @@
          <!-- steps-area-end -->
          <!-- event-area -->
          <section class="event pt-120 pb-90 p-relative fix">
-            <div class="animations-06"><img src="assets/front/img/bg/an-img-06.png" alt="an-img-01"></div>
-            <div class="animations-07"><img src="assets/front/img/bg/an-img-07.png" alt="contact-bg-an-01"></div>
-            <div class="animations-08"><img src="assets/front/img/bg/an-img-08.png" alt="contact-bg-an-01"></div>
-            <div class="animations-09"><img src="assets/front/img/bg/an-img-09.png" alt="contact-bg-an-01"></div>
+            <div class="animations-06"><img src="build/assets/front/img/bg/an-img-06.png" alt="an-img-01"></div>
+            <div class="animations-07"><img src="build/assets/front/img/bg/an-img-07.png" alt="contact-bg-an-01"></div>
+            <div class="animations-08"><img src="build/assets/front/img/bg/an-img-08.png" alt="contact-bg-an-01"></div>
+            <div class="animations-09"><img src="build/assets/front/img/bg/an-img-09.png" alt="contact-bg-an-01"></div>
             <div class="container">
                <div class="row">
                   <div class="col-lg-12 p-relative">
@@ -336,7 +336,7 @@
                   <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                      <div class="event-item mb-30 hover-zoomin">
                         <div class="thumb">
-                           <a href="#"><img src="assets/front/img/bg/evn-img-1.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/bg/evn-img-1.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="event-content">
                            <div class="date"><strong>18</strong> June, 2024</div>
@@ -348,7 +348,7 @@
                   <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                      <div class="event-item mb-30 hover-zoomin">
                         <div class="thumb">
-                           <a href="#"><img src="assets/front/img/bg/evn-img-2.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/bg/evn-img-2.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="event-content">
                            <div class="date"><strong>20</strong> June, 2024</div>
@@ -360,7 +360,7 @@
                   <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                      <div class="event-item mb-30 hover-zoomin">
                         <div class="thumb">
-                           <a href="#"><img src="assets/front/img/bg/evn-img-3.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/bg/evn-img-3.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="event-content">
                            <div class="date"><strong>22</strong> June, 2024</div>
@@ -372,7 +372,7 @@
                   <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                      <div class="event-item mb-30 hover-zoomin">
                         <div class="thumb">
-                           <a href="#"><img src="assets/front/img/bg/evn-img-4.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/bg/evn-img-4.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="event-content">
                            <div class="date"><strong>22</strong> June, 2024</div>
@@ -384,7 +384,7 @@
                   <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                      <div class="event-item mb-30 hover-zoomin">
                         <div class="thumb">
-                           <a href="#"><img src="assets/front/img/bg/evn-img-5.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/bg/evn-img-5.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="event-content">
                            <div class="date"><strong>24</strong> June, 2024</div>
@@ -396,7 +396,7 @@
                   <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                      <div class="event-item mb-30 hover-zoomin">
                         <div class="thumb">
-                           <a href="#"><img src="assets/front/img/bg/evn-img-6.jpg" alt="contact-bg-an-01"></a>
+                           <a href="#"><img src="build/assets/front/img/bg/evn-img-6.jpg" alt="contact-bg-an-01"></a>
                         </div>
                         <div class="event-content">
                            <div class="date"><strong>30</strong> June, 2024</div>
@@ -410,7 +410,7 @@
          </section>
          <!-- courses-area -->
          <!-- cta-area -->
-         <section class="cta-area cta-bg pt-50 pb-50" style="background-image:url(assets/front/img/bg/cta_bg02.png)">
+         <section class="cta-area cta-bg pt-50 pb-50" style="background-image:url(build/assets/front/img/bg/cta_bg02.png)">
             <div class="container">
                <div class="row justify-content-center">
                   <div class="col-lg-8">
@@ -430,8 +430,8 @@
          <!-- cta-area-end -->
          <!-- frequently-area -->
          <section class="faq-area pt-120 pb-120 p-relative fix">
-            <div class="animations-10"><img src="assets/front/img/bg/an-img-04.png" alt="an-img-01"></div>
-            <div class="animations-08"><img src="assets/front/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
+            <div class="animations-10"><img src="build/assets/front/img/bg/an-img-04.png" alt="an-img-01"></div>
+            <div class="animations-08"><img src="build/assets/front/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
             <div class="container">
                <div class="row justify-content-center  align-items-center">
                   <div class="col-lg-7">
@@ -542,7 +542,7 @@
          </section>
          <!-- frequently-area-end -->
          <!-- video-area -->
-         <section class="cta-area cta-bg pt-160 pb-160" style="background-image:url(assets/front/img/bg/cta_bg.png)">
+         <section class="cta-area cta-bg pt-160 pb-160" style="background-image:url(build/assets/front/img/bg/cta_bg.png)">
             <div class="container">
                <div class="row justify-content-center  align-items-center">
                   <div class="col-xl-6 col-lg-6 col-md-12">
@@ -555,7 +555,7 @@
                   </div>
                   <div class="col-lg-4">
                      <div class="s-video-content">
-                        <!--  <a href="https://www.youtube.com/watch?v=gyGsPlt06bo" class="popup-video mb-50"><img src="https://radianttranscripts.com/assets/front/img/bg/play-button.png" alt="circle_right"></a>
+                        <!--  <a href="https://www.youtube.com/watch?v=gyGsPlt06bo" class="popup-video mb-50"><img src="https://radianttranscripts.com/build/assets/front/img/bg/play-button.png" alt="circle_right"></a>
                            -->
                      </div>
                   </div>
@@ -565,8 +565,8 @@
          <!-- video-area-end -->
          <!-- testimonial-area -->
          <section class="testimonial-area pt-120 pb-115 p-relative fix">
-            <div class="animations-01"><img src="assets/front/img/bg/an-img-03.png" alt="an-img-01"></div>
-            <div class="animations-02"><img src="assets/front/img/bg/an-img-04.png" alt="contact-bg-an-01"></div>
+            <div class="animations-01"><img src="build/assets/front/img/bg/an-img-03.png" alt="an-img-01"></div>
+            <div class="animations-02"><img src="build/assets/front/img/bg/an-img-04.png" alt="contact-bg-an-01"></div>
             <div class="container">
                <div class="row">
                   <div class="col-lg-12">
@@ -581,11 +581,11 @@
                      <div class="testimonial-active wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                         <div class="single-testimonial text-center">
                            <div class="qt-img">
-                              <img src="assets/front/img/testimonial/qt-icon.png" alt="img">
+                              <img src="build/assets/front/img/testimonial/qt-icon.png" alt="img">
                            </div>
                            <p>Amazing service from Radiant, I had to talk to them only once for my Bangalore University and Madurai Kamaraj university transcripts. Highly skilled professionals, I was recommended by my friend and it was the best decision.</p>
                            <div class="testi-author">
-                              <!-- <img src="https://radianttranscripts.com/assets/front/img/testimonial/testi_avatar.png" alt="img"> -->
+                              <!-- <img src="https://radianttranscripts.com/build/assets/front/img/testimonial/testi_avatar.png" alt="img"> -->
                            </div>
                            <div class="ta-info">
                               <h6> Shruthi K</h6>
@@ -593,11 +593,11 @@
                         </div>
                         <div class="single-testimonial text-center">
                            <div class="qt-img">
-                              <img src="assets/front/img/testimonial/qt-icon.png" alt="img">
+                              <img src="build/assets/front/img/testimonial/qt-icon.png" alt="img">
                            </div>
                            <p>Thanks a tonne to Radiant Transcripts; I had contacted so many consultants for KSOU Mysore transcripts. You are the only one who committed and succeeded to provide my transcripts. I can't thank you much, it really means a lot.</p>
                            <div class="testi-author">
-                              <!-- <img src="https://radianttranscripts.com/assets/front/img/testimonial/testi_avatar_02.png" alt="img"> -->
+                              <!-- <img src="https://radianttranscripts.com/build/assets/front/img/testimonial/testi_avatar_02.png" alt="img"> -->
                            </div>
                            <div class="ta-info">
                               <h6>Aastha Kaur</h6>
@@ -605,11 +605,11 @@
                         </div>
                         <div class="single-testimonial text-center">
                            <div class="qt-img">
-                              <img src="assets/front/img/testimonial/qt-icon.png" alt="img">
+                              <img src="build/assets/front/img/testimonial/qt-icon.png" alt="img">
                            </div>
                            <p>Thank you so much Guys, You made my day. I received my WES evaluation reports. Amazing, stupendous, awesome, marvelous and I can go on.. I recommend everyone on Google to take your services.</p>
                            <div class="testi-author">
-                              <!-- <img src="https://radianttranscripts.com/assets/front/img/testimonial/testi_avatar_03.png" alt="img"> -->
+                              <!-- <img src="https://radianttranscripts.com/build/assets/front/img/testimonial/testi_avatar_03.png" alt="img"> -->
                            </div>
                            <div class="ta-info">
                               <h6> Afsana Khan</h6>
@@ -617,11 +617,11 @@
                         </div>
                         <div class="single-testimonial text-center">
                            <div class="qt-img">
-                              <img src="assets/front/img/testimonial/qt-icon.png" alt="img">
+                              <img src="build/assets/front/img/testimonial/qt-icon.png" alt="img">
                            </div>
                            <p>I was referred to by a family friend in Canada. Their family got transcripts done from Radiant. Upon choosing Radiant I could realistically feel whatever they told about the company was true. Highly appreciate the efficiency and suggest others to avail their services!.</p>
                            <div class="testi-author">
-                              <!-- <img src="https://radianttranscripts.com/assets/front/img/testimonial/testi_avatar.png" alt="img"> -->
+                              <!-- <img src="https://radianttranscripts.com/build/assets/front/img/testimonial/testi_avatar.png" alt="img"> -->
                            </div>
                            <div class="ta-info">
                               <h6>Jasmine Jose</h6>
@@ -629,11 +629,11 @@
                         </div>
                         <div class="single-testimonial text-center">
                            <div class="qt-img">
-                              <img src="assets/front/img/testimonial/qt-icon.png" alt="img">
+                              <img src="build/assets/front/img/testimonial/qt-icon.png" alt="img">
                            </div>
                            <p>These guys are very professional and time management is at par. Work done effectively from Pune University. Thank you Radiant Transcripts Services.</p>
                            <div class="testi-author">
-                              <!-- <img src="https://radianttranscripts.com/assets/front/img/testimonial/testi_avatar_02.png" alt="img"> -->
+                              <!-- <img src="https://radianttranscripts.com/build/assets/front/img/testimonial/testi_avatar_02.png" alt="img"> -->
                            </div>
                            <div class="ta-info">
                               <h6>Sheetal Joshi</h6>
