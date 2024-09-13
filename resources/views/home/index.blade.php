@@ -9,7 +9,7 @@
                         <div class="col-lg-7 col-md-7">
                            <div class="slider-content s-slider-content mt-200">
                               <h5 data-animation="fadeInUp" data-delay=".4s"></h5>
-                              <h2 data-animation="fadeInUp" data-delay=".4s">Welcome To <br>OCSM India</h2>
+                              <h2 data-animation="fadeInUp" data-delay=".4s">Welcome To <br></h2>
                               <p data-animation="fadeInUp" data-delay=".6s">Oxford Computer Sakshartha Mission Pvt. Limited, New Delhi</p>
                               <div class="slider-btn mt-30">
                                  <a href="#" class="btn ss-btn mr-15" data-animation="fadeInLeft" data-delay=".4s">Discover More <i class="fal fa-long-arrow-right"></i></a>
