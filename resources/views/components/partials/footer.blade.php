@@ -1,4 +1,4 @@
-<footer class="footer-bg footer-p pt-90" style="background-color: #125875; background-image: url(assets/front/img/bg/footer-bg.png);">
+<footer class="footer-bg footer-p pt-90" style="background-color: #125875; background-image: url(build/assets/front/img/bg/footer-bg.png);">
          <div class="footer-top pb-70">
             <div class="container">
                <div class="row justify-content-between">
@@ -42,13 +42,13 @@
                         <div class="recent-blog-footer">
                            <ul>
                               <li>
-                                 <div class="thum"> <img src="assets/front/img/blog/s-blogimg-01.png" alt="img"></div>
+                                 <div class="thum"> <img src="build/assets/front/img/blog/s-blogimg-01.png" alt="img"></div>
                                  <div class="text"> <a href="#">Nothing impossble to need hard work</a>
                                     <span>June, 2024</span>
                                  </div>
                               </li>
                               <li>
-                                 <div class="thum"> <img src="assets/front/img/blog/s-blogimg-02.png" alt="img"></div>
+                                 <div class="thum"> <img src="build/assets/front/img/blog/s-blogimg-02.png" alt="img"></div>
                                  <div class="text"> <a href="#">Nothing impossble to need hard work</a>
                                     <span>June, 2024</span>
                                  </div>
@@ -100,22 +100,22 @@
 
       <!-- footer-end -->
       <!-- JS here -->
-      <script src="assets/front/js/vendor/modernizr-3.5.0.min.js"></script>
-      <script src="assets/front/js/vendor/jquery-3.6.0.min.js"></script>
-      <script src="assets/front/js/popper.min.js"></script>
-      <script src="assets/front/js/bootstrap.min.js"></script>
-      <script src="assets/front/js/slick.min.js"></script>
-      <script src="assets/front/js/ajax-form.js"></script>
-      <script src="assets/front/js/paroller.js"></script>
-      <script src="assets/front/js/wow.min.js"></script>
-      <script src="assets/front/js/js_isotope.pkgd.min.js"></script>
-      <script src="assets/front/js/imagesloaded.min.js"></script>
-      <script src="assets/front/js/parallax.min.js"></script>
-      <script src="assets/front/js/jquery.waypoints.min.js"></script>
-      <script src="assets/front/js/jquery.counterup.min.js"></script>
-      <script src="assets/front/js/jquery.scrollUp.min.js"></script>
-      <script src="assets/front/js/jquery.meanmenu.min.js"></script>
-      <script src="assets/front/js/parallax-scroll.js"></script>
-      <script src="assets/front/js/jquery.magnific-popup.min.js"></script>
-      <script src="assets/front/js/element-in-view.js"></script>
-      <script src="assets/front/js/main.js"></script>
+      <script src="build/assets/front/js/vendor/modernizr-3.5.0.min.js"></script>
+      <script src="build/assets/front/js/vendor/jquery-3.6.0.min.js"></script>
+      <script src="build/assets/front/js/popper.min.js"></script>
+      <script src="build/assets/front/js/bootstrap.min.js"></script>
+      <script src="build/assets/front/js/slick.min.js"></script>
+      <script src="build/assets/front/js/ajax-form.js"></script>
+      <script src="build/assets/front/js/paroller.js"></script>
+      <script src="build/assets/front/js/wow.min.js"></script>
+      <script src="build/assets/front/js/js_isotope.pkgd.min.js"></script>
+      <script src="build/assets/front/js/imagesloaded.min.js"></script>
+      <script src="build/assets/front/js/parallax.min.js"></script>
+      <script src="build/assets/front/js/jquery.waypoints.min.js"></script>
+      <script src="build/assets/front/js/jquery.counterup.min.js"></script>
+      <script src="build/assets/front/js/jquery.scrollUp.min.js"></script>
+      <script src="build/assets/front/js/jquery.meanmenu.min.js"></script>
+      <script src="build/assets/front/js/parallax-scroll.js"></script>
+      <script src="build/assets/front/js/jquery.magnific-popup.min.js"></script>
+      <script src="build/assets/front/js/element-in-view.js"></script>
+      <script src="build/assets/front/js/main.js"></script>
