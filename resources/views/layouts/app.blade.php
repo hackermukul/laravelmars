@@ -24,6 +24,7 @@
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'plugins/select2/css/select2.min.css' }}">
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'plugins/select2-bootstrap4.min.css' }}">
       <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
       <!-- DataTables -->
@@ -77,7 +78,7 @@
                   <ul class="nav nav-pills nav-sidebar flex-column sidebar-menu tree" data-widget="treeview" role="menu" data-accordion="false">
                      <li class="nav-item menu-open">
                         <a href="#" class="nav-link active">
-                           <i class="nav-icon fas fa-tachometer-alt"></i>
+                           <i class="nav-icon fa fa-tachometer-alt"></i>
                            <p>
                               {{ __('Dashboard') }} 
                            </p>
@@ -99,10 +100,10 @@
                            ?>
                         <li class="nav-item has-treeview <?=$is_open?>">
                            <a href="#" class="nav-link <?=$active?>">
-                               <i class="nav-icon fas fa-th" style="font-size: 23px;"></i>
+                               <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
                            <p>
                                  Application Setup
-                                 <i class="fas fa-angle-left right"></i>
+                                 <i class="fa fa-angle-left right"></i>
                                  <!-- <span class="badge badge-info right">6</span> -->
                               </p>
                            </a>
@@ -129,10 +130,10 @@
                         ?>
                      <li class="nav-item has-treeview <?=$is_open?>">
                         <a href="#" class="nav-link <?=$active?>">
-                           <i class="nav-icon fas fa-th" style="font-size: 23px;"></i>
+                           <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
                            <p>
                               Company Profile
-                              <i class="fas fa-angle-left right"></i>
+                              <i class="fa fa-angle-left right"></i>
                               <!-- <span class="badge badge-info right">6</span> -->
                            </p>
                         </a>
@@ -158,10 +159,10 @@
                      ?>
                      <li class="nav-item <?=$is_open?>">
                         <a href="#" class="nav-link <?=$active?>">
-                           <i class="nav-icon fas fa-th" style="font-size: 23px;"></i>
+                           <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
                            <p>
                             {{ __('Masters') }}
-                              <i class="fas fa-angle-left right"></i>
+                              <i class="fa fa-angle-left right"></i>
                            </p>
                         </a>
                         <ul class="nav nav-treeview">
