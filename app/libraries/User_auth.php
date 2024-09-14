@@ -118,7 +118,7 @@ class User_auth
 				<p>
 				'.$obj->name;
 		if($obj->submenu->count() > 0 ){
-	      $html .='<i class="right fas fa-angle-left"></i>';
+	      $html .='<i class="right fa fa-angle-left"></i>';
 		}
 		if(!empty($obj->data_count))
 		{
@@ -151,7 +151,7 @@ class User_auth
 			$html .= $nav_icon;
 		}
 		else
-			{$html .= '<i class="nav-icon fas fa-circle"></i>';}
+			{$html .= '<i class="nav-icon fa fa-circle"></i>';}
 		$html .= '<p>'.$obj->name; 
 		if(!empty($obj->data_count))
 		{
