@@ -1,5 +1,10 @@
 <?php
-$baseURL = 'http://127.0.0.1:8000/';
+
+$web_root = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
+$web_root = str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+$baseURL	= $web_root;
+date_default_timezone_set('Asia/Calcutta'); 
+
 
 return [
 
