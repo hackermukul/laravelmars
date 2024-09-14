@@ -34,7 +34,8 @@
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'toastr.min.css'}}">
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'adminlte.min.css' }}">
       <script src="{{ config('constants.options.MAINSITE_Admin').'plugins/jquery/jquery.min.js' }}"></script>
-
+ 
+ 
       
       <!-- Theme style -->
    </head>
