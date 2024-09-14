@@ -25,6 +25,7 @@
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'plugins/select2-bootstrap4.min.css' }}">
       <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 
       <!-- DataTables -->
@@ -68,7 +69,7 @@
                         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"  name="q" autocomplete="off" aria-label="Search" id="search-input">
                         <div class="input-group-append">
                            <button class="btn btn-sidebar">
-                           <i class="fas fa-search fa-fw"></i>
+                           <i class="fa fa-search fa-fw"></i>
                            </button>
                         </div>
                      </div>
