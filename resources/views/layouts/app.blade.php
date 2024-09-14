@@ -29,13 +29,13 @@
 
 
       <!-- DataTables -->
-      <link rel="stylesheet" href="https://www.nfees.org/assets/admin/lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-      <link rel="stylesheet" href="https://www.nfees.org/assets/admin/lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-      <link rel="stylesheet" href="https://dietdighi.in/assets/admin/lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-      <link rel="stylesheet" href="https://dietdighi.in/assets/admin/lte/plugins/pace-progress/themes/black/pace-theme-flat-top.css">
+      <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'dataTables.bootstrap4.min.css' }}">
+      <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'responsive.bootstrap4.min.css' }} ">
+      <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'OverlayScrollbars.min.css' }}">
+      <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'pace-theme-flat-top.css' }}">
       <!-- Toastr -->
-      <link rel="stylesheet" href="https://dietdighi.in/assets/admin/lte/plugins/toastr/toastr.min.css">
-      <link rel="stylesheet" href="https://dietdighi.in/assets/admin/lte/dist/css/adminlte.min.css">
+      <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'toastr/toastr.min.css'}}">
+      <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'adminlte.min.css' }}">
       <script src="{{ config('constants.options.MAINSITE_Admin').'plugins/jquery/jquery.min.js' }}"></script>
       <!-- Theme style -->
    </head>
