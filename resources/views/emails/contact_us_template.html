@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Inquiry</title>
+</head>
+<body>
+    <h2>Contact Us Inquiry</h2>
+    <p><strong>Name:</strong> {{ $mailMessage['name'] }}</p>
+    <p><strong>Contact:</strong> {{ $mailMessage['contact'] }}</p>
+    <p><strong>Email:</strong> {{ $mailMessage['email'] }}</p>
+    <p><strong>City:</strong> {{ $mailMessage['city'] }}</p>
+    <p><strong>Description:</strong> {{ $mailMessage['description'] }}</p>
+    <p><strong>Page:</strong> {{ $mailMessage['page'] }}</p>
+    <p><strong>Page URL:</strong> {{ $mailMessage['page_url'] }}</p>
+
+    <!-- Project Details -->
+    <p><strong>Project Contact:</strong> {{ $mailMessage['project_contact'] }}</p>
+    <p><strong>Project Website:</strong> {{ $mailMessage['project_website'] }}</p>
+    <p><strong>Project Email:</strong> {{ $mailMessage['project_email'] }}</p>
+
+    <!-- Social Media Links -->
+    <div>
+        {!! $mailMessage['social_media'] !!}
+    </div>
+
+    <p>Thank you for your inquiry!</p>
+</body>
+</html>

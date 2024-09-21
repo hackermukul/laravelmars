@@ -16,9 +16,18 @@ class Mailer extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $mailMessage;
+    public $subject;
+
+    /**
+     * Create a new message instance.
+     *
+     * @param string $mailMessage
+     */
+    public function __construct($mailMessage , $subject)
     {
-        //
+        $this->mailMessage = $mailMessage;
+        $this->subject = $subject;
     }
 
     /**
@@ -34,11 +43,11 @@ class Mailer extends Mailable
     /**
      * Get the message content definition.
      */
-    public function content(): Content
+    public function build()
     {
-        return $this->subject('New Contact Enquiry')
-        ->view('emails.contact')
-        ->with('data', $this->data);
+        return $this->subject($this->subject)
+                    ->view('emails.contact_us_template') // Blade view for email template
+                    ->with('mailMessage', $this->mailMessage);
     }
 
     /**
