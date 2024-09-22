@@ -38,7 +38,7 @@ class HomeController extends Controller
         // Send the email
         $subject = "Contact Us Inquiry from " . config('app.name');
         $mailMessage = file_get_contents(resource_path('views/emails/enquiry-to-admin-contact.html'));
-        $logo= config('app.url').'build/assets/front/img/rad.png';
+        $logo= "https://www.new.nalandacollegebed.com/build/assets/front/img/rad.png";
        
         // Populate dynamic content
         $mailMessage = str_replace("#logo#", $logo, $mailMessage);
