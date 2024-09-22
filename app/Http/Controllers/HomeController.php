@@ -63,8 +63,7 @@ class HomeController extends Controller
         }
         // Add other social media links as needed
         $mailMessage = str_replace("#social_media#", $social_media, $mailMessage);
-          dd($mailMessage);
-          exit;
+         
         // Send email
         Mail::send([], [], function ($message) use ($subject, $mailMessage) {
             $message->to(config('mail.from.address'))
