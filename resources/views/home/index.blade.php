@@ -1,6 +1,31 @@
 @section('title', 'Home Page')
 <x-base-layout>
     <!-- slider-area -->
+<style>
+    /* CSS Spinner */
+    .spinner {
+        border: 8px solid #f3f3f3; /* Light grey */
+        border-top: 8px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Center the spinner */
+    #loadingSpinner {
+        margin: 0 auto;
+    }
+</style>
+
+
     <section id="home" class="slider-area fix p-relative">
             <div class="slider-active" style="background: #141b22;">
                <div class="single-slider slider-bg" style="background-image: url(build/assets/front/img/slider/slider_bg_01.png); background-size: cover;">
@@ -430,7 +455,7 @@
          </section>
          <!-- cta-area-end -->
          <!-- frequently-area -->
-         <section class="faq-area pt-120 pb-120 p-relative fix">
+         <section class="faq-area pt-120 pb-120 p-relative fix" id="enquiry-section">
             <div class="animations-10"><img src="build/assets/front/img/bg/an-img-04.png" alt="an-img-01"></div>
             <div class="animations-08"><img src="build/assets/front/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
             <div class="container">
@@ -509,30 +534,61 @@
                               Make An Contact
                            </h2>
                         </div>
-                        <form action="#" method="post" class="contact-form mt-30 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
+                        @if(session('success'))
+                           <div class="alert alert-success">
+                              {{ session('success') }}
+                           </div>
+                        @endif
+                        <form action="{{ route('sendEnquiry') }}" method="post" id="enquiryForm" name="enquiryForm" class="contact-form mt-30 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s" >
+                        @csrf
                            <div class="row">
                               <div class="col-lg-12">
                                  <div class="contact-field p-relative c-name mb-20">
-                                    <input type="text" id="firstn" name="firstn" placeholder="First Name" required>
+                                    <input type="text" id="name" name="name" placeholder="First Name" required value="{{ old('name') }}">
                                  </div>
+                                 <span>
+                                    @error('name')
+                                        <div class="error" style="color: red">{{ $errors }}</div>
+                                    @enderror
+                                 </span>
                               </div>
                               <div class="col-lg-12">
                                  <div class="contact-field p-relative c-subject mb-20">
-                                    <input type="text" id="email" name="email" placeholder="Email" required>
+                                    <input type="text" id="email" name="email" placeholder="Email" required value="{{ old('email') }}">
                                  </div>
+                                 <span>
+                                    @error('email')
+                                        <div class="error" style="color: red">{{ $errors }}</div>
+                                    @enderror
+                                 </span>
                               </div>
                               <div class="col-lg-12">
                                  <div class="contact-field p-relative c-subject mb-20">
-                                    <input type="text" id="phone" name="phone" placeholder="Phone No." required>
+                                    <input type="text" id="phone" name="phone" placeholder="Phone No." required value="{{ old('phone') }}">
                                  </div>
+                                 <span>
+                                    @error('phone')
+                                        <div class="error" style="color: red">{{ $errors }}</div>
+                                    @enderror
+                                 </span>
                               </div>
                               <div class="col-lg-12">
                                  <div class="contact-field p-relative c-message mb-30">
-                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Write comments"></textarea>
+                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Write comments">{{ old('message') }}</textarea>
                                  </div>
+                                 <span>
+                                    @error('message')
+                                        <div class="error" style="color: red">{{ $errors }}</div>
+                                    @enderror
+                                 </span>
                                  <div class="slider-btn">
-                                    <button class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s"><span>Submit Now</span> <i class="fal fa-long-arrow-right"></i></button>
+                                  <button class="btn ss-btn" type="submit" id="submitBtn" data-animation="fadeInRight" data-delay=".8s">
+                    <span>Submit Now</span>
+                    <i class="fal fa-long-arrow-right"></i>
+                </button>
                                  </div>
+                                 <!-- Loading spinner (hidden by default) -->
+                                 <div id="loadingSpinner" class="spinner" style="display: none;"></div>
                               </div>
                            </div>
                         </form>
@@ -648,5 +704,22 @@
          <!-- testimonial-area-end -->
          <!-- search-area -->
          <!-- newslater-area -->
+         <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('enquiryForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+
+        form.addEventListener('submit', function () {
+            // Disable the submit button to prevent multiple submissions
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Submitting...';
+
+            // Show the loading spinner
+            loadingSpinner.style.display = 'block';
+        });
+    });
+</script>
+
 
 </x-base-layout>

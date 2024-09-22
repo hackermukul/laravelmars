@@ -27,6 +27,7 @@ class Mailer extends Mailable
     public function __construct($mailMessage , $subject)
     {
         $this->mailMessage = $mailMessage;
+        
         $this->subject = $subject;
     }
 

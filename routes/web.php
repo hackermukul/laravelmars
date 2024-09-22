@@ -46,6 +46,8 @@ Route::fallback(function(){
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::post('/sendEnquiry', [HomeController::class,'sendEnquiry'])->name('sendEnquiry');
+
 
 
 

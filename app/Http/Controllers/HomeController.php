@@ -25,25 +25,28 @@ class HomeController extends Controller
 
     
 
-    public function send(Request $request)
+    public function sendEnquiry(Request $request)
     {
         // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
+            'phone' => 'required|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:9|numeric',
             'message' => 'required|string',
         ]);
 
         // Send the email
         $subject = "Contact Us Inquiry from " . config('app.name');
-        $mailMessage = file_get_contents(resource_path('views/emails/contact_us_template.html'));
-        
+        $mailMessage = file_get_contents(resource_path('views/emails/enquiry-to-admin-contact.html'));
+        $logo= config('app.url').'build/assets/front/img/rad.png';
+       
         // Populate dynamic content
-        $mailMessage = str_replace("#name#", $request->input('name_contact_us'), $mailMessage);
-        $mailMessage = str_replace("#contact#", $request->input('contact_contact_us'), $mailMessage);
-        $mailMessage = str_replace("#email#", $request->input('email_contact_us'), $mailMessage);
-        $mailMessage = str_replace("#city#", $request->input('city_contact_us'), $mailMessage);
-        $mailMessage = str_replace("#description#", $request->input('message_contact_us'), $mailMessage);
+        $mailMessage = str_replace("#logo#", $logo, $mailMessage);
+        $mailMessage = str_replace("#name#", $request->input('name'), $mailMessage);
+        $mailMessage = str_replace("#contact#", $request->input('phone'), $mailMessage);
+        $mailMessage = str_replace("#email#", $request->input('email'), $mailMessage);
+        $mailMessage = str_replace("#city#", '', $mailMessage);
+        $mailMessage = str_replace("#description#", $request->input('message'), $mailMessage);
         $mailMessage = str_replace("#page#", 'Product', $mailMessage);
         $mailMessage = str_replace("#page_url#", $request->server('HTTP_REFERER'), $mailMessage);
         
@@ -56,18 +59,24 @@ class HomeController extends Controller
         // Social media links
         $social_media = '';
         if(config('app.facebook')) {
-            $social_media .= '<a href="'.config('app.facebook').'" target="_blank"><img src="'.asset('images/email/facebook.png').'" width="25"></a>';
+            $social_media .= '<a href="'.config('app.facebook').'" target="_blank"><img src="'.asset('build/assets/front/email/facebook.png').'" width="25"></a>';
         }
         // Add other social media links as needed
         $mailMessage = str_replace("#social_media#", $social_media, $mailMessage);
-
+          dd($mailMessage);
+          exit;
         // Send email
-        Mail::to(config('mail.from.address'))->send(new Mailer($mailMessage , $subject));
+        Mail::send([], [], function ($message) use ($subject, $mailMessage) {
+            $message->to(config('mail.from.address'))
+                    ->subject($subject)
+                    ->html($mailMessage); // Sending the generated HTML content
+        });
+        //Mail::to(config('mail.from.address'))->send(new Mailer($mailMessage , $subject));
 
 
        // Mail::to('mukulsingh97087@gmail.com')->send(new ContactMail($request->all()));
 
-        return back()->with('success', 'Your enquiry has been sent successfully!');
+       return redirect()->route('home')->with('success', 'Enquiry submitted successfully!')->withFragment('enquiry-section');
     }
 
 
