@@ -51,7 +51,7 @@ Route::post('/sendEnquiry', [HomeController::class,'sendEnquiry'])->name('sendEn
 
 
 
-Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard.'],function () {
+Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard'],function () {
    
     //DashboardController
 
