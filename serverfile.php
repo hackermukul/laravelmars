@@ -81,3 +81,44 @@ private function upload_file_to_remote($file_name, $company_profile_id, $directo
         return ['status' => 'error', 'message' => 'Failed to connect to remote server.'];
     }
 }
+
+
+
+
+
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Company extends CI_Controller {
+
+    public function upload_image() {
+        // Load necessary helpers
+        $this->load->helper('url');
+        $this->load->helper('file'); // Optional, for file-related functions
+
+        // Get the directory and file from POST request
+        $directory = $this->input->post('directory');
+        $upload_dir = './' . $directory; // Ensure the correct path
+
+        // Ensure the directory exists; if not, create it
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+
+        // Handle the file upload 
+        if (isset($_FILES['file'])) {
+            $file_name = $_FILES['file']['name'];
+            $tmp_name = $_FILES['file']['tmp_name'];
+            $upload_path = $upload_dir . basename($file_name);
+
+            // Move the file to the specified directory
+            if (move_uploaded_file($tmp_name, $upload_path)) {
+                echo json_encode(['status' => 'success', 'message' => 'File uploaded successfully.']);
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'File upload failed.']);
+            }
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'No file uploaded.']);
+        }
+    }
+}
+
