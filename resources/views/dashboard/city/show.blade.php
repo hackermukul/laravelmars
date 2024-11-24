@@ -27,12 +27,12 @@
                <h3 class="card-title">@if($view_data[0]->name) {{ $view_data[0]->name}} @else {{'N/A'}} @endif</h3>
                <div class="float-right">
                   @if($user_access->add_module==1)	
-                  <a href="{{ route('categories.create') }}"> 
+                  <a href="{{ route('city.create') }}"> 
                   <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add
                   New</button></a>
                    @endif
                    @if($user_access->update_module==1)
-                  <a href="{{ route('categories.edit', $categories[0]->slug) }}"> 
+                  <a href="{{ route('city.edit', $view_data[0]->slug) }}"> 
                   <button type="button" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Update</button>
                   </a>
                     @endif
