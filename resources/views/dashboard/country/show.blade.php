@@ -32,7 +32,7 @@
                   New</button></a>
                    @endif
                    @if($user_access->update_module==1)
-                  <a href="{{ route($main_routes.'.edit', $data_view[0]->slug) }}"> 
+                  <a href="{{ route($main_routes.'.edit', $country[0]->slug) }}"> 
                   <button type="button" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Update</button>
                   </a>
                    @endif

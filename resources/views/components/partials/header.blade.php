@@ -1,98 +1,38 @@
-<header class="header-area header-three">
-           <div class="header-top second-header d-none d-md-block">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-4 d-none d-lg-block ">
-                           <div class="header-social">
-                                <span>
-                                    Follow us:-
-                                    <a href="https://www.facebook.com/radiantts" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/radianttranscriptsservices/?viewAsMember=true"><i class="fab fa-linkedin"></i></a>
-                                    <a target="_blank" href="https://twitter.com/RadiantTrans"><i class="fab fa-twitter"></i></a>
-                                    <a target="_blank" href="https://radianttranscriptsservices.quora.com/"><i class="fab fa-quora"></i></a>
-                                   </span>
-                                   <!--  /social media icon redux -->
-                            </div>
-                        </div>
-                          <div class="col-lg-8 col-md-8 d-none d-lg-block text-right">
-                              <div class="header-cta">
-                                <ul>
-                                   <li>
-                                      <div class="call-box">
-                                         <div class="icon">
-                                            <img src="build/assets/front/img/icon/phone-call.png" alt="img">
-                                         </div>
-                                         <div class="text">
-                                            <span>Call Now !</span>
-                                            <strong><a href="tel:{{ config('constants.options.__projectemail__') }}">+91–9886674457 | +91–9886643436</a></strong>
-                                         </div>
-                                      </div>
-                                   </li>
-                                   <li>
-                                      <div class="call-box">
-                                         <div class="icon">
-                                            <img src="build/assets/front/img/icon/mailing.png" alt="img">
-                                         </div>
-                                         <div class="text">
-                                            <span>Email Now</span>
-                                            <strong><a href="mailto:{{ config('constants.options.__projectemail__') }}"> {{ config('constants.options.__projectemail__') }} </a></strong>
-                                         </div>
-                                      </div>
-                                   </li>
-                                </ul>
-                             </div>
-                        </div>
 
-                    </div>
-                </div>
+         <!-- Header Section -->
+         <header class="header text-center">
+            <div class="container">
+               <h1>Welcome to Online Grievance Software System</h1>
+               <p>Online Grievance Software</p>
             </div>
-			  <div id="header-sticky" class="menu-area">
-                <div class="container">
-                    <div class="second-menu">
-                        <div class="row align-items-center">
-                             <div class="col-xl-3 col-lg-3">
-                                <div class="logo">
-                                    <a href="{{ config('constants.options.MAINSITE') }}"><img src="build/assets/front/img/rad.png" alt="logo"></a>
-                                </div>
-                            </div>
-                           <div class="col-xl-7 col-lg-7">
-
-                                <div class="main-menu text-right text-xl-right">
-                                    <nav id="mobile-menu">
-                                          <ul>
-                                             <li><a href="{{ config('constants.options.MAINSITE') }}">Home</a>
-
-                                            </li>
-                                            <li><a href="{{ route('about') }}">About Us</a></li>
-                                            <li><a href="university.html">Universities</a></li>
-                                            <li><a href="services.html">Services</a></li>
-                                                                                          <li><a href="Login.html">Apply Now</a></li>
-
-                                                                                          <li><a href="orders.html">Order Status</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                                                                        <!-- <li><a href="#">Contact Us</a></li>                                                -->
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                             <div class="col-xl-2 col-lg-2 text-right d-none d-lg-block text-right text-xl-right">
-                                 <div class="login">
-                                    <ul>
-
-                                        <li>
-                                            <div class="second-header-btn">
-                                               <a href="contact-us.html" class="btn">Contact Us</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                                <div class="col-12">
-                                    <div class="mobile-menu"></div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
+         </header>
+         <div class="">
+            <div class="">
+               <div class="row">
+                  <div id="headerImage" class="col-lg-12">
+                     <a href="https://collegeebook.in/"><img src="https://collegeebook.in/uploads/logos/b4880f34de8954c9fa361f2bf8b9b6c3.png" class="img-responsive" style="box-shadow: 4px 0px 8px 3px #fff;max-width: 110%;height:161px;"></a>
+                  </div>
+                  <div>
+                     <ul class="nav navbar-nav navbar-right" style="height: 0px;padding-right: 20px;">
+                        <li><a style="color:#fff;line-height: 24px;display: block;font - family: 'Roboto Condensed', sans - serif; " href="/Controll" id="loginLink">Log in</a></li>
+                     </ul>
+                  </div>
+               </div>
             </div>
-        </header>
+         </div>
+         <!-- Navigation Bar -->
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                     <li class="nav-item"><a class="nav-link" href="https://collegeebook.in/login/student">Login</a></li>
+                     <li class="nav-item"><a class="nav-link" href="https://collegeebook.in/register">Register</a></li>
+                     <li class="nav-item"><a class="nav-link" href="https://collegeebook.in/login/econtent">Admin Login</a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>

@@ -386,11 +386,9 @@ class UserController extends Controller
 		}
         
         // Additional logic or redirection after successful data storage
-        if($request->save =="save"){
-           return redirect()->route('employee.index')->with('success', 'employee stored successfully!');
-        }else{
-            return redirect()->route('employee.create')>with('success', 'employee stored successfully!');
-        }
+        return $request->save === "save"
+        ? redirect()->route('employee.index')->with('success', 'Employee updated successfully!')
+        : redirect()->route('employee.create')->with('success', 'Employee updated successfully!');
         
 
     }

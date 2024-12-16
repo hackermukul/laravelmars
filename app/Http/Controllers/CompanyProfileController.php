@@ -232,7 +232,7 @@ class CompanyProfileController extends Controller
         if($request->save =="save"){
             return redirect()->route('company.index')->with('success', 'company succesfully updated!');
         }else{
-             return redirect()->route('company.create')->with('success', 'company succesfully updated!');
+            return redirect()->route('company.index')->with('success', 'company succesfully updated!');
         }
 
     }
