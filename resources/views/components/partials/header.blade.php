@@ -10,7 +10,7 @@
             <div class="">
                <div class="row">
                   <div id="headerImage" class="col-lg-12">
-                     <a href="https://collegeebook.in/"><img src="https://collegeebook.in/uploads/logos/b4880f34de8954c9fa361f2bf8b9b6c3.png" class="img-responsive" style="box-shadow: 4px 0px 8px 3px #fff;max-width: 110%;height:161px;"></a>
+                     <a href="{{ route('home') }}"><img src="https://collegeebook.in/uploads/logos/b4880f34de8954c9fa361f2bf8b9b6c3.png" class="img-responsive" style="box-shadow: 4px 0px 8px 3px #fff;max-width: 110%;height:161px;"></a>
                   </div>
                   <div>
                      <ul class="nav navbar-nav navbar-right" style="height: 0px;padding-right: 20px;">
@@ -27,12 +27,13 @@
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ms-auto">
-                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                     <li class="nav-item"><a class="nav-link" href="https://collegeebook.in/login/student">Login</a></li>
-                     <li class="nav-item"><a class="nav-link" href="https://collegeebook.in/register">Register</a></li>
-                     <li class="nav-item"><a class="nav-link" href="https://collegeebook.in/login/econtent">Admin Login</a></li>
-                  </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('registration') }}">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Admin Login</a></li>
+                </ul>
+
                </div>
             </div>
          </nav>

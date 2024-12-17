@@ -9,6 +9,10 @@ use App\Http\Controllers\StateController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\StudentRegistrationController;
+
+
 
 
 
@@ -46,8 +50,31 @@ Route::fallback(function(){
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::get('/registration', [HomeController::class,'registration'])->name('registration');
 Route::post('/sendEnquiry', [HomeController::class,'sendEnquiry'])->name('sendEnquiry');
 
+
+// Show the registration form
+Route::get('/registration/student', [StudentRegistrationController::class, 'showForm'])->name('registration.student');
+
+// Handle form submission
+Route::post('/registration/student', [StudentRegistrationController::class, 'submitForm'])->name('registration.student.submit');
+
+
+Route::post('/registration/staff', [StudentRegistrationController::class, 'submitForm'])->name('registration.staff.submit');
+
+
+
+// Student Registration Route
+Route::get('/registration/student', [RegistrationController::class, 'studentRegistration'])->name('registration.student');
+
+// Staff Registration Route
+Route::get('/registration/staff', [RegistrationController::class, 'staffRegistration'])->name('registration.staff');
+
+// Parent Registration Route
+Route::get('/registration/parent', [RegistrationController::class, 'parentRegistration'])->name('registration.parent');
+
+ 
 
 
 

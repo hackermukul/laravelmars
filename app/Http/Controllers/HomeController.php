@@ -23,6 +23,19 @@ class HomeController extends Controller
         return view('home.about', $data);
     }
 
+    public function registration()
+    {
+        $data['title'] =  'The  register';
+        return view('home.registration', $data);
+    }
+
+    public function login()
+    {
+        $data['title'] =  'The  About Page';
+       
+        return view('home.about', $data);
+    }
+
     
 
     public function sendEnquiry(Request $request)
