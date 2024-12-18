@@ -61,8 +61,9 @@ Route::get('/registration/student', [StudentRegistrationController::class, 'show
 Route::post('/registration/student', [StudentRegistrationController::class, 'submitForm'])->name('registration.student.submit');
 
 
-Route::post('/registration/staff', [StudentRegistrationController::class, 'submitForm'])->name('registration.staff.submit');
+Route::post('/registration/staff', [StudentRegistrationController::class, 'staffsubmitForm'])->name('registration.staff.submit');
 
+Route::post('/registration/parent', [StudentRegistrationController::class, 'parentsubmitForm'])->name('registration.parent.submit');
 
 
 // Student Registration Route

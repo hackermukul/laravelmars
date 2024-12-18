@@ -111,7 +111,7 @@ h5 {
 
             <form action="{{ route('registration.student.submit') }}" method="POST">
                 @csrf
-
+               <input type="hidden" name="registrations_type" value="student">
                 <div class="row">
                     <!-- Personal Details -->
                     <div class="col-md-6">

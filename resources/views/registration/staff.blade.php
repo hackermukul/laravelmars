@@ -172,7 +172,7 @@ body {
         </div>
 
         <div class="card-body">
-            <form method="POST" action="">
+            <form action="{{ route('registration.staff.submit') }}" method="POST">
                 @csrf
                 <div class="row">
                     <!-- Personal details -->

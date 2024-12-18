@@ -13,14 +13,24 @@ return new class extends Migration
     {
         Schema::create('designations', function (Blueprint $table) {
             $table->id();
-            $table->string('name',250);
-            $table->string('slug',250);
-            $table->integer('position')->length(11)->nullable();
-            $table->boolean('status')->default(0);
+            $table->string('name', 250)->nullable();
+            $table->string('registrations_type', 100)->nullable();
+            $table->string('father_name', 250)->nullable();
+            $table->string('mobile_no', 10)->nullable();
+            $table->string('email', 255)->unique()->nullable();
+            $table->string('course', 255)->nullable();
+            $table->string('semester', 50)->nullable();
+            $table->string('roll_no', 50)->nullable();
+            $table->string('academic_session', 100)->nullable();
+            $table->string('user_id', 100)->unique()->nullable();
+            $table->string('password', 255)->nullable();
+            $table->string('department', 150)->nullable();
+            $table->string('child_name', 250)->nullable();
+            $table->string('session', 100)->nullable();
+            $table->boolean('status')->default(0)->nullable();
             $table->foreignId('added_by')->nullable()->index();
             $table->integer('updated_by')->length(11)->nullable();
-            //$table->timestamp('updated_on')->nullable(); 
-            $table->tinyInteger('is_deleted')->default(0); // `birth_day` tinyint(3)
+            $table->tinyInteger('is_deleted')->default(0)->nullable();
             $table->integer('is_deleted_by')->length(11)->nullable();
             $table->timestamp('is_deleted_on')->nullable();
             $table->timestamps();
