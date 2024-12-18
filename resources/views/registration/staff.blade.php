@@ -173,72 +173,73 @@ body {
 
         <div class="card-body">
             <form action="{{ route('registration.staff.submit') }}" method="POST">
-                @csrf
-                <div class="row">
-                    <!-- Personal details -->
-                    <div class="col-md-4 col-12">
-                        <h5>Personal details</h5>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required placeholder="Enter name">
-                            @error('name')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                        </div>
+    @csrf
+    <div class="row">
+        <!-- Personal details -->
+        <div class="col-md-4 col-12">
+            <h5>Personal details</h5>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Enter name">
+                @error('name')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
 
-                        <div class="form-group">
-                            <label for="father_name">Father Name</label>
-                            <input type="text" name="father_name" class="form-control @error('father_name') is-invalid @enderror" value="{{ old('father_name') }}" required placeholder="Enter father name">
-                            @error('father_name')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                        </div>
+            <div class="form-group">
+                <label for="father_name">Father Name</label>
+                <input type="text" name="father_name" class="form-control @error('father_name') is-invalid @enderror" value="{{ old('father_name') }}" placeholder="Enter father name">
+                @error('father_name')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
 
-                        <div class="form-group">
-                            <label for="mobile">Mobile No</label>
-                            <input type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" value="{{ old('mobile') }}" required placeholder="Enter mobile number">
-                            @error('mobile')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                        </div>
+            <div class="form-group">
+                <label for="mobile">Mobile No</label>
+                <input type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" value="{{ old('mobile') }}" placeholder="Enter mobile number">
+                @error('mobile')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
 
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required placeholder="Enter email">
-                            @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                        </div>
-                    </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Enter email">
+                @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
+        </div>
 
-                    <!-- Academic details -->
-                    <div class="col-md-4 col-12">
-                        <h5>Academic details</h5>
-                        <div class="form-group">
-                            <label for="department">Department</label>
-                            <input type="text" name="department" class="form-control @error('department') is-invalid @enderror" value="{{ old('department') }}" required placeholder="Enter department">
-                            @error('department')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                        </div>
-                    </div>
+        <!-- Academic details -->
+        <div class="col-md-4 col-12">
+            <h5>Academic details</h5>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" name="department" class="form-control @error('department') is-invalid @enderror" value="{{ old('department') }}" placeholder="Enter department">
+                @error('department')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
+        </div>
 
-                    <!-- Login details (Stay on the same row for larger screens) -->
-                    <div class="col-md-4 col-12">
-                        <h5>Staff's login details</h5>
-                        <div class="form-group">
-                            <label for="user_id">User Id</label>
-                            <input type="text" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id') }}" required placeholder="Enter user id">
-                            @error('user_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                        </div>
+        <!-- Login details (Stay on the same row for larger screens) -->
+        <div class="col-md-4 col-12">
+            <h5>Staff's login details</h5>
+            <div class="form-group">
+                <label for="user_id">User Id</label>
+                <input type="text" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id') }}" placeholder="Enter user id">
+                @error('user_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
 
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" required placeholder="Password">
-                            @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                        </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
 
-                        <div class="form-group">
-                            <label for="password_confirmation">Confirm password</label>
-                            <input type="password" name="password_confirmation" class="form-control" required placeholder="Confirm password">
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="password_confirmation">Confirm password</label>
+                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password">
+            </div>
+        </div>
+    </div>
 
-                <div class="text-end">
-                    <button type="submit" class="btn btn-success">Register</button>
-                </div>
-            </form>
+    <div class="text-end">
+        <button type="submit" class="btn btn-success">Register</button>
+    </div>
+</form>
+
         </div>
     </div>
 </div>
