@@ -131,8 +131,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header text-center">
-            <img src="{{ asset('images/staff-icon.png') }}" alt="Staff Icon" class="img-fluid rounded-circle" style="max-width: 80px;">
-            <h4>I am a parent</h4>
+            <h4>Student/Staff/Parent Login </h4>
         </div>
 
         <div class="card-body">
