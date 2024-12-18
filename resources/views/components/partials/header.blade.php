@@ -29,7 +29,7 @@
                <div class="collapse navbar-collapse" id="navbarNav">
                  <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login-module') }}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('registration') }}">Registration</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Admin Login</a></li>
                 </ul>

@@ -29,11 +29,11 @@ class HomeController extends Controller
         return view('home.registration', $data);
     }
 
-    public function login()
+    public function login_module()
     {
         $data['title'] =  'The  About Page';
        
-        return view('home.about', $data);
+        return view('home.login_module', $data);
     }
 
     

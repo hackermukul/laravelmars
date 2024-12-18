@@ -75,6 +75,10 @@ Route::get('/registration/staff', [RegistrationController::class, 'staffRegistra
 // Parent Registration Route
 Route::get('/registration/parent', [RegistrationController::class, 'parentRegistration'])->name('registration.parent');
 
+
+
+Route::get('/login-module', [HomeController::class, 'login_module'])->name('login-module');
+
  
 
 
