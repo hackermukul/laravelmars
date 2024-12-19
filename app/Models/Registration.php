@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 
-
-class Registration extends Model
+class Registration extends Model implements AuthenticatableContract
 {
-    use HasFactory;
+    use HasFactory, Authenticatable;
 
     // Define the table name if it's not the plural of the model name
     protected $table = 'registrations';
@@ -36,5 +37,9 @@ class Registration extends Model
         'is_deleted_by',
         'is_deleted_on',
     ];
-    
+
+    // Define hidden attributes
+    protected $hidden = [
+        'password', // Ensure the password is hidden when the model is converted to an array or JSON
+    ];
 }

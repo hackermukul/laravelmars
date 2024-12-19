@@ -11,6 +11,8 @@ use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\StudentRegistrationController;
+use App\Http\Controllers\AuthController;
+
 
 
 
@@ -50,10 +52,10 @@ Route::fallback(function(){
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about', [HomeController::class,'about'])->name('about');
-Route::get('/registration', [HomeController::class,'registration'])->name('registration');
 Route::post('/sendEnquiry', [HomeController::class,'sendEnquiry'])->name('sendEnquiry');
 
 
+Route::get('/registration', [HomeController::class,'registration'])->name('registration');
 // Show the registration form
 Route::get('/registration/student', [StudentRegistrationController::class, 'showForm'])->name('registration.student');
 
@@ -77,11 +79,12 @@ Route::get('/registration/parent', [RegistrationController::class, 'parentRegist
 
 
 
-Route::get('/login-module', [HomeController::class, 'login_module'])->name('login-module');
 
- 
+Route::post('/customer-login', [AuthController::class, 'customer_login'])->name('customer_login');
 
-
+Route::middleware('guest')->get('/loginForm', [AuthController::class, 'showLoginForm'])->name('loginForm');
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard'],function () {
    

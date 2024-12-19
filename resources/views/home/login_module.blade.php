@@ -139,29 +139,30 @@
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
-            <form action="" method="post" id="loginForm" novalidate="novalidate" style="margin-top:25px">
-                @csrf
-                <div class="input-group" style='margin-bottom: 20px;'>
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror" placeholder="Enter user id" name="user_id" value="{{ old('user_id') }}">
-                    @error('user_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                </div>
+            <form action="{{ route('customer_login') }}" method="post" id="loginForm" novalidate="novalidate" style="margin-top:25px" autocomplete="off">
+                    @csrf
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror" placeholder="Enter user id" name="user_id" value="{{ old('user_id') }}" autocomplete="off">
+                        @error('user_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
 
-                <div class="input-group" style='margin-bottom: 20px;'>
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter password" name="password">
-                    @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                </div>
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter password" name="password" autocomplete="off">
+                        @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
 
-                <div class="input-group" style='margin-bottom: 20px; float:right'>
-                    <button type="submit" class="btn btn-success btn-block" style='padding: 7px 20px;'>Login</button>
-                </div>
+                    <div class="input-group" style="margin-bottom: 20px; float:right">
+                        <button type="submit" class="btn btn-success btn-block" style="padding: 7px 20px;">Login</button>
+                    </div>
 
-                <div class="text-end">
-                    <p>If not registered, <a href="{{ route('registration') }}">Click Here for Registration</a></p>
-                    <p><a href="">Forgot user id or password?</a></p>
-                </div>
-            </form>
+                    <div class="text-end">
+                        <p>If not registered, <a href="{{ route('registration') }}">Click Here for Registration</a></p>
+                        <p><a href="">Forgot user id or password?</a></p>
+                    </div>
+                </form>
+
         </div>
     </div>
 </div>

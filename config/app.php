@@ -124,6 +124,10 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+
+    
+
+
     'facebook' => env('FACEBOOK_URL', 'https://facebook.com/yourpage'),
     'twitter' => env('TWITTER_URL', 'https://twitter.com/yourhandle'),
     'instagram' => env('INSTAGRAM_URL', 'https://instagram.com/yourprofile'),

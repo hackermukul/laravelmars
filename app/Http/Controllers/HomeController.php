@@ -23,8 +23,13 @@ class HomeController extends Controller
         return view('home.about', $data);
     }
 
-    public function registration()
+    public function registration(Request $request)
     {
+
+        if ($request->session()->has('customer')) {
+            return redirect()->route('profile');
+        }
+
         $data['title'] =  'The  register';
         return view('home.registration', $data);
     }
