@@ -15,7 +15,6 @@ body {
     text-align: center;
 }
 
-
 /* Cards container styling */
 .row {
     display: flex;
@@ -106,42 +105,53 @@ body {
         margin: 0 auto;
     }
 }
-
 </style>
-    <div class="container mt-5 text-center">
-        <h1 class="fw-bold">Registration</h1>
-        <p><em>Select a type</em></p>
 
-        <div class="row justify-content-center mt-4">
-            <!-- Student Card -->
-            <div class="col-md-3">
-                <div class="card shadow p-3 mb-5 bg-body rounded">
-                    <img src="https://via.placeholder.com/100/28a745/FFFFFF?text=Student" alt="Student" class="img-fluid rounded-circle mx-auto d-block" style="width: 100px;">
-                    <div class="card-body text-center">
-                        <a href="{{ route('registration.student') }}" class="btn btn-success w-100">I am a student</a>
-                    </div>
+<div class="container mt-5 text-center">
+    <h1 class="fw-bold">Registration</h1>
+    <p><em>Select a type</em></p>
+
+    <div class="row justify-content-center mt-4">
+        <!-- Student Card -->
+        <div class="col-md-3">
+            <div class="card shadow p-3 mb-5 bg-body rounded">
+                <img src="https://via.placeholder.com/100/28a745/FFFFFF?text=Student" alt="Student" class="img-fluid rounded-circle mx-auto d-block" style="width: 100px;">
+                <div class="card-body text-center">
+                    <a href="{{ route('registration.student') }}" class="btn btn-success w-100">I am a student</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Staff Card -->
-            <div class="col-md-3">
-                <div class="card shadow p-3 mb-5 bg-body rounded">
-                    <img src="https://via.placeholder.com/100/dc3545/FFFFFF?text=Staff" alt="Staff" class="img-fluid rounded-circle mx-auto d-block" style="width: 100px;">
-                    <div class="card-body text-center">
-                        <a href="{{ route('registration.staff') }}" class="btn btn-danger w-100">I am a  alumni & Staff</a>
-                    </div>
+        <!-- Staff Card -->
+        <div class="col-md-3">
+            <div class="card shadow p-3 mb-5 bg-body rounded">
+                <img src="https://via.placeholder.com/100/dc3545/FFFFFF?text=Staff" alt="Staff" class="img-fluid rounded-circle mx-auto d-block" style="width: 100px;">
+                <div class="card-body text-center">
+                    <a href="{{ route('registration.staff') }}" class="btn btn-danger w-100">I am a Staff</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Parent Card -->
-            <div class="col-md-3">
-                <div class="card shadow p-3 mb-5 bg-body rounded">
-                    <img src="https://via.placeholder.com/100/007bff/FFFFFF?text=Parent" alt="Parent" class="img-fluid rounded-circle mx-auto d-block" style="width: 100px;">
-                    <div class="card-body text-center">
-                        <a href="{{ route('registration.parent') }}" class="btn btn-primary w-100">I am a parent</a>
-                    </div>
+        <!-- Alumni Card -->
+        <div class="col-md-3">
+            <div class="card shadow p-3 mb-5 bg-body rounded">
+                <img src="https://via.placeholder.com/100/dc3545/FFFFFF?text=Alumni" alt="Alumni" class="img-fluid rounded-circle mx-auto d-block" style="width: 100px;">
+                <div class="card-body text-center">
+                    <a href="{{ route('registration.alumni') }}" class="btn btn-danger w-100">I am an Alumni</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parent Card -->
+        <div class="col-md-3">
+            <div class="card shadow p-3 mb-5 bg-body rounded">
+                <img src="https://via.placeholder.com/100/007bff/FFFFFF?text=Parent" alt="Parent" class="img-fluid rounded-circle mx-auto d-block" style="width: 100px;">
+                <div class="card-body text-center">
+                    <a href="{{ route('registration.parent') }}" class="btn btn-primary w-100">I am a parent</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 </x-base-layout>

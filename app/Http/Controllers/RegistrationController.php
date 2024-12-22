@@ -23,4 +23,9 @@ class RegistrationController extends Controller
     {
         return view('registration.parent');
     }
+
+    public function alumniRegistration()
+    {
+        return view('registration.alumni');
+    }
 }

@@ -93,6 +93,43 @@ class StudentRegistrationController extends Controller
 }
 
 
+public function alumnisubmitForm(Request $request)
+    {
+        // Validate the form inputs
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'father_name' => 'required|string|max:255',
+            'mobile_no' => 'required|digits:10',
+            'email' => 'required|email|max:255',
+            'course' => 'required|string|max:255',
+            'semester' => 'required|string|max:255',
+            'roll_no' => 'required|string|max:50',
+            'academic_session' => 'required|string|max:255',
+            'user_id' => 'required|string|max:50|unique:registrations,user_id',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        // Save the data in the registrations table
+        $registration = new Registration();
+        $registration->name = $validated['name'];
+        $registration->registrations_type = "student";
+        $registration->father_name = $validated['father_name'];
+        $registration->mobile_no = $validated['mobile_no'];
+        $registration->email = $validated['email'];
+        $registration->course = $validated['course'];
+        $registration->semester = $validated['semester'];
+        $registration->roll_no = $validated['roll_no'];
+        $registration->academic_session = $validated['academic_session'];
+        $registration->user_id = $validated['user_id'];
+        $registration->password = bcrypt($validated['password']); // Encrypt the password
+        $registration->save();
+
+        // Redirect with a success message
+        return redirect()->route('registration.alumni')->with('success', 'Registration successful.');
+    }
+
+
+
 public function parentsubmitForm(Request $request)
 {
     // Validate the form inputs

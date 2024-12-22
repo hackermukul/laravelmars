@@ -12,6 +12,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\StudentRegistrationController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GrievanceController;
+
+
 
 
 
@@ -67,6 +71,8 @@ Route::post('/registration/staff', [StudentRegistrationController::class, 'staff
 
 Route::post('/registration/parent', [StudentRegistrationController::class, 'parentsubmitForm'])->name('registration.parent.submit');
 
+Route::post('/registration/alumni', [StudentRegistrationController::class, 'alumnisubmitForm'])->name('registration.alumni.submit');
+
 
 // Student Registration Route
 Route::get('/registration/student', [RegistrationController::class, 'studentRegistration'])->name('registration.student');
@@ -76,6 +82,23 @@ Route::get('/registration/staff', [RegistrationController::class, 'staffRegistra
 
 // Parent Registration Route
 Route::get('/registration/parent', [RegistrationController::class, 'parentRegistration'])->name('registration.parent');
+
+Route::get('/registration/alumni', [RegistrationController::class, 'alumniRegistration'])->name('registration.alumni');
+
+
+
+// Profile Routes
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('editProfile');
+Route::put('/profile/update', [ProfileController::class, 'update'])->name('updateProfile');
+Route::get('/profile/change-password', [ProfileController::class, 'changePasswordForm'])->name('changePassword');
+Route::put('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
+
+
+
+Route::get('/grievances/create', [GrievanceController::class, 'create'])->name('addGrievance');
+Route::post('/grievances', [GrievanceController::class, 'store'])->name('submitGrievance');
+Route::get('/grievances', [GrievanceController::class, 'index'])->name('viewGrievance');
 
 
 

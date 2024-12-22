@@ -8,32 +8,8 @@
                 <div class="card-header">
                     <h4>Dashboard Menu</h4>
                 </div>
-                <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="{{ route('profile') }}" class="text-decoration-none">Profile Overview</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" class="text-decoration-none">Edit Profile</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" class="text-decoration-none">Change Password</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" class="text-decoration-none">Add Course</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{ route('logout') }}" 
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                               class="text-decoration-none text-danger">
-                                Logout
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+               @include('cauth.dashboard-menu')
+
             </div>
         </div>
 
@@ -42,6 +18,10 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Welcome, {{ $customer['name'] }}!</h3>
+                     @if(session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+        
                 </div>
                 <div class="card-body">
                     <h5>Your Profile</h5>
@@ -58,9 +38,9 @@
                         </li>
                     </ul>
                     <hr>
-                    <a href="" class="btn btn-warning">Edit Profile</a>
-                    <a href="" class="btn btn-info">Change Password</a>
-                    <a href="" class="btn btn-success">Add Course</a>
+                    <a href="{{ route('editProfile') }}" class="btn btn-warning">Edit Profile</a>
+                    <a href="{{ route('changePassword') }}" class="btn btn-info">Change Password</a>
+                    <a href="{{ route('addGrievance') }}" class="btn btn-success">Add Grievance</a>
                 </div>
             </div>
         </div>
