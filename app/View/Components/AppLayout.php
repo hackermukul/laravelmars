@@ -83,6 +83,8 @@ class AppLayout extends Component
         // exit;
 		$this->data['left_menu_employee'] = $this->data['User_auth_obj']->get_left_menu( 3 , $params_arr);
 		$this->data['left_menu_company_profile'] = $this->data['User_auth_obj']->get_left_menu( 2 , $params_arr);
+		$this->data['left_menu_grievance'] = $this->data['User_auth_obj']->get_left_menu( 4 , $params_arr);
+
 		$this->data['banner_menu'] = $this->data['User_auth_obj']->get_left_menu( 6, $params_arr);
 		$this->data['processes_menu'] = $this->data['User_auth_obj']->get_left_menu( 7 , $params_arr);
        

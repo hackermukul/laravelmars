@@ -51,15 +51,8 @@ class RoleManagerController extends Controller
 			"1"=>"Master",
 			"2"=>"Company",
 			"3"=>"Employee",
-			"4"=>"Reports",
-			"5"=>"External Share Links",
-			"6"=>"Website",
-			"7"=>"Update",
-			"8"=>"Customer",
-			"9"=>"Enquiry",
-			"10"=>"NULL",
-			"11"=>"NULL",
-			"12"=>"NULL"
+			"4"=>"Grievance",
+			
 		);
     }
 

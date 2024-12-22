@@ -12,10 +12,10 @@
 
                     <h4 class="fw-semibold">Step 1: Registration</h4>
                     <p class="text-start">
-                        Already registered? Click <a href="member-login.php" class="text-warning">LOGIN</a>.
+                        Already registered? Click <a href="{{ route('loginForm') }}" class="text-warning">LOGIN</a>.
                     </p>
-                    <ul class="text-start">
-                        <li><a href="registration.php" class="text-warning">Register Here</a> and fill in the required details.</li>
+                    <ul class="text-start"> 
+                        <li><a href="{{ route('registration') }}" class="text-warning">Register Here</a> and fill in the required details.</li>
                         <li>Click the SUBMIT button after completing the form.</li>
                         <li>Once registered, you can post grievances.</li>
                     </ul>

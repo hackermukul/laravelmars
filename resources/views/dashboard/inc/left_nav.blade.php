@@ -29,6 +29,24 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-th" style="font-size: 26px;"></i>
                            <p>
+                             Grievance
+                              <i class="fas fa-angle-left right"></i>
+                           </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                           <li class="nav-item">
+                              <a href="{{ route('grievance.index') }}" :active="request()->routeIs('grievance.index'" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Grievance</p>
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-th" style="font-size: 26px;"></i>
+                           <p>
                              Company 
                               <i class="fas fa-angle-left right"></i>
                            </p>

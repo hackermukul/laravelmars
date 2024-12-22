@@ -14,14 +14,7 @@ use App\Http\Controllers\StudentRegistrationController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GrievanceController;
-
-
-
-
-
-
-
-
+use App\Http\Controllers\GrievanceAdminController;
 
 
 
@@ -274,6 +267,22 @@ Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard'],function () {
         Route::post('addNewFileLine', [UserController::class,'addNewFileLine'])->name('addNewFileLine');
 
     });
+
+
+    Route::group(['prefix'=>'grievance','as'=> 'grievance.'], function() {
+        Route::get('/', [GrievanceAdminController::class,'index'])->name('index');
+        Route::get('create', [GrievanceAdminController::class,'create'])->name('create');
+        Route::post('store', [GrievanceAdminController::class,'store'])->name('store');
+        Route::get('show/{id}', [GrievanceAdminController::class,'show'])->name('show');
+        Route::get('{userModel:slug}/edit', [GrievanceAdminController::class,'edit'])->name('edit');
+        Route::put('{userModel:slug}', [GrievanceAdminController::class,'update'])->name('update');
+        Route::get('{role-manager:slug}/delate', [GrievanceAdminController::class,'destroy'])->name('destroy');
+        Route::post('updateStatus', [GrievanceAdminController::class,'updateStatus'])->name('updateStatus');
+        Route::post('search', [GrievanceAdminController::class,'index'])->name('search');
+        Route::post('export-excel', [GrievanceAdminController::class,'export_excel'])->name('export-excel');
+
+    });
+
 
 
 });
