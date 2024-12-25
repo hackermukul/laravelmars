@@ -172,6 +172,9 @@ body {
         </div>
 
         <div class="card-body">
+         @if(session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
             <form action="{{ route('registration.staff.submit') }}" method="POST">
     @csrf
     <div class="row">

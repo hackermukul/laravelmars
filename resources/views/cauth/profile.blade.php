@@ -27,16 +27,62 @@
                     <h5>Your Profile</h5>
                     <hr>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>User ID:</strong> {{ $customer['user_id'] }}
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Name:</strong> {{ $customer['name'] }}
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Email:</strong> {{ $customer['email'] }}
-                        </li>
-                    </ul>
+    <!-- General Information -->
+    <li class="list-group-item">
+        <strong>User ID:</strong> {{ $customer['user_id'] }}
+    </li>
+    <li class="list-group-item">
+        <strong>Name:</strong> {{ $customer['name'] }}
+    </li>
+    <li class="list-group-item">
+        <strong>Email:</strong> {{ $customer['email'] }}
+    </li>
+    <li class="list-group-item">
+        <strong>Phone:</strong> {{ $customer['mobile_no'] }}
+    </li>
+
+    <!-- Conditional Data -->
+    @if($customer['registrations_type'] == 'student')
+        <li class="list-group-item">
+            <strong>Course:</strong> {{ $customer['course'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Semester:</strong> {{ $customer['semester'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Roll No:</strong> {{ $customer['roll_no'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Academic Session:</strong> {{ $customer['academic_session'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Father Name:</strong> {{ $customer['father_name'] ?? 'N/A' }}
+        </li>
+    @elseif($customer['registrations_type'] == 'parent')
+        <li class="list-group-item">
+            <strong>Child Name:</strong> {{ $customer['child_name'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Department:</strong> {{ $customer['department'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Father Name:</strong> {{ $customer['father_name'] ?? 'N/A' }}
+        </li>
+    @elseif($customer['registrations_type'] == 'staff')
+       
+        <li class="list-group-item">
+            <strong>Department:</strong> {{ $customer['department'] ?? 'N/A' }}
+        </li>
+    @endif
+
+    <!-- Default case for other types -->
+    @if(!in_array($customer['registrations_type'], ['student', 'parent', 'staff']))
+        <li class="list-group-item">
+            <strong>Other Data:</strong> {{ $customer['additional_info'] ?? 'N/A' }}
+        </li>
+    @endif
+</ul>
+
                     <hr>
                     <a href="{{ route('editProfile') }}" class="btn btn-warning">Edit Profile</a>
                     <a href="{{ route('changePassword') }}" class="btn btn-info">Change Password</a>

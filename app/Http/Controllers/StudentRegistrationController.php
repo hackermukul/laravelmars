@@ -31,8 +31,8 @@ class StudentRegistrationController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'father_name' => 'required|string|max:255',
-            'mobile_no' => 'required|digits:10',
-            'email' => 'required|email|max:255',
+            'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+            'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
             'course' => 'required|string|max:255',
             'semester' => 'required|string|max:255',
             'roll_no' => 'required|string|max:50',
@@ -66,15 +66,16 @@ class StudentRegistrationController extends Controller
  public function staffsubmitForm(Request $request)
 {
     // Validate the form inputs
-    $validated = $request->validate([
-        'name' => 'required|string|max:255',
-        'father_name' => 'required|string|max:255',
-        'mobile' => 'required|digits:10',
-        'email' => 'required|email|max:255',
-        'department' => 'required|string|max:255',
-        'user_id' => 'required|string|max:50|unique:registrations,user_id',
-        'password' => 'required|min:6|confirmed',
-    ]);
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'father_name' => 'required|string|max:255',
+            'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+            'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
+            'department' => 'required|string|max:255',
+            'user_id' => 'required|string|max:50|unique:registrations,user_id', // Ensure user_id is unique
+            'password' => 'required|min:6|confirmed',
+        ]);
+
 
     // Create a new registration record
     $registration = new Registration();
@@ -99,10 +100,10 @@ public function alumnisubmitForm(Request $request)
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'father_name' => 'required|string|max:255',
-            'mobile_no' => 'required|digits:10',
-            'email' => 'required|email|max:255',
+            'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+            'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
             'course' => 'required|string|max:255',
-            'semester' => 'required|string|max:255',
+            //'semester' => 'required|string|max:255',
             'roll_no' => 'required|string|max:50',
             'academic_session' => 'required|string|max:255',
             'user_id' => 'required|string|max:50|unique:registrations,user_id',
@@ -112,12 +113,12 @@ public function alumnisubmitForm(Request $request)
         // Save the data in the registrations table
         $registration = new Registration();
         $registration->name = $validated['name'];
-        $registration->registrations_type = "student";
+        $registration->registrations_type = "alumni";
         $registration->father_name = $validated['father_name'];
         $registration->mobile_no = $validated['mobile_no'];
         $registration->email = $validated['email'];
         $registration->course = $validated['course'];
-        $registration->semester = $validated['semester'];
+       // $registration->semester = $validated['semester'];
         $registration->roll_no = $validated['roll_no'];
         $registration->academic_session = $validated['academic_session'];
         $registration->user_id = $validated['user_id'];
@@ -136,8 +137,8 @@ public function parentsubmitForm(Request $request)
     $validated = $request->validate([
         'name' => 'required|string|max:255',
         'child_name' => 'required|string|max:255',
-        'mobile_no' => 'required|digits:10',
-        'email' => 'required|email|max:255',
+        'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+            'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
         'course' => 'required|string|max:255',
         'semester' => 'required|string|max:255',
         'roll_no' => 'required|string|max:50',

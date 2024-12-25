@@ -61,7 +61,7 @@
 
 /* Ensuring the form fits nicely on the screen */
 .container {
-    margin-top: 50px;
+    
     max-width: 600px; /* Set a max-width for the form container */
 }
 
@@ -131,7 +131,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header text-center">
-            <h4>Student/Staff/Parent Login </h4>
+            <h4>Student/Staff/Alumni/Parent login  </h4>
         </div>
 
         <div class="card-body">

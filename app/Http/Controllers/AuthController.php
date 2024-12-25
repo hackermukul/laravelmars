@@ -51,9 +51,14 @@ class AuthController extends Controller
     public function profile(Request $request)
     {
         // Check if user is logged in
-        $customer = $request->session()->get('customer');
-        if (!$customer) {
+        $customers = $request->session()->get('customer');
+        if (!$customers) {
             return redirect()->route('loginForm')->withErrors(['message' => 'Please log in to access your profile.']);
+        }
+
+        $customer = Registration::find($customers['id']); // Use your Registration model
+        if (!$customer) {
+            return redirect()->route('loginForm')->withErrors(['message' => 'Customer not found.']);
         }
           
         return view('cauth.profile', compact('customer'));
