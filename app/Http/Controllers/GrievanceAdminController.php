@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rule;
 use Validator;
 use App\Models\GrievanceModel;
+use App\Models\GrievanceReply;
+use App\Models\Grievance;
+
+
 
 use Intervention\Image\Facades\Image as Image;
 
@@ -176,6 +180,17 @@ class GrievanceAdminController extends Controller
         $search= array();
         $search['id'] = $id;
         $this->data['view_data']=$GrievanceModel = $this->GrievanceModel->get_data_master($search);
+    
+        $this->data['replies'] = DB::table('grievance_replies')
+                ->join('grievances', 'grievances.id', '=', 'grievance_replies.grievance_id')
+                ->join('department_models', 'grievances.related_to', '=', 'department_models.id')
+                ->where('grievance_replies.grievance_id', $id)
+                ->select('grievance_replies.*', 'department_models.name as related_to')
+                ->orderBy('grievance_replies.created_at', 'asc')  // Order by created_at in ascending order
+                ->get();
+    
+
+            
         if( $GrievanceModel->count() > 0) {
             return view('dashboard.grievance.show', $this->data);
         } else {
@@ -199,27 +214,47 @@ class GrievanceAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, State $state)
-    {
-        $request->validate([
-            'name' => 'required|unique:states,name,'.$request->department_id,
-            'status'          => 'required',
-            //'state_code'          => 'required',
+    public function updateReply(Request $request)
+{
+    // Find the grievance by ID
+    
+    $grievance = Grievance::findOrFail($request->id);
 
-        ]);
-      
-        $state->name           = $request->name;
-        $state->country_id = $request->country_id;
-        $state->slug           = $this->State->setTitleAttribute($request->name);
-        $state->status         = $request->status;
-        $state->updated_by     = Auth::user()->id;
-        $state->save();
-        if($request->save =="save"){
-            return redirect()->route('state.index')->with('success', 'state succesfully updated!');
-        }else{
-             return redirect()->route('state.create')->with('success', 'state succesfully updated!');
-        }
+    // Validate the input
+    $validated = $request->validate([
+        'reply' => 'required',
+        'attachment' => 'nullable|file|mimes:jpg,png,pdf,docx|max:10240', // Optional file upload validation
+        'status' => 'required', // Ensure valid status
+    ]);
+
+    // Handle file upload if present
+    $attachmentPath = null;
+    if ($request->hasFile('attachment')) {
+        $attachmentPath = $request->file('attachment')->store('attachments', 'public');
     }
+
+    // Insert reply into the grievance_replies table
+    $grievanceReply = new GrievanceReply();
+    $grievanceReply->grievance_id = $grievance->id; // Assuming GrievanceReply has a 'grievance_id' column
+    $grievanceReply->reply = $validated['reply'];
+    $grievanceReply->registrations_id = $grievance->registrations_id;
+    $grievanceReply->management_id = Auth::user()->id;
+
+
+    $grievanceReply->attachment = $attachmentPath;
+    $grievanceReply->save();
+
+    // Update only the status field in the grievances table
+    $grievance->status = $validated['status'];
+    $grievance->save();
+
+    // Redirect back with success message
+return redirect()->route('grievance.show', ['id' => $grievance->id])
+                 ->with('success', 'Grievance reply added and status updated successfully');
+}
+
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -229,6 +264,7 @@ class GrievanceAdminController extends Controller
         //
     }
 
+    
 
 
     public function updateStatus(Request $request)

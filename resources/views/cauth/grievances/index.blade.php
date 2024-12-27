@@ -41,7 +41,7 @@
         @foreach ($grievances as $grievance)
             <tr>
                 <td>{{ $grievance->id }}</td>
-                <td>{{ $grievance->related_to }}</td>
+                <td><a href="{{ route('grievances.show', $grievance->id) }}"> {{ $grievance->related_to }}</a></td>
                 <td>{{ $grievance->subject }}</td>
                 <td>{{ $grievance->grievance }}</td>
                 <td>
@@ -53,7 +53,11 @@
                 </td>
                 <td>{{ $grievance->status == 0 ? 'Pending' : 'Active' }}</td>
 
-                <td>{{ $grievance->created_at->format('Y-m-d H:i') }}</td>
+            
+               <td>{{ \Carbon\Carbon::parse($grievance->created_at)->format('d M, Y') }}</td>
+
+                
+            
             </tr>
         @endforeach
     </tbody>

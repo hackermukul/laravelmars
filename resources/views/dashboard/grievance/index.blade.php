@@ -150,12 +150,24 @@
 
                                  <td>
                               
-                           @if($row->status == 1)
-                              <i class="fas fa-check text-success"></i>
-                           @else
-                              <i class="fas fa-ban text-danger"></i>
-                           @endif
-                        
+                          @if($row->status ==1)
+                                    <span class="badge badge-success">
+                                       <i class="fas fa-check"></i> Active
+                                    </span>
+                                 @elseif($row->status ==0)
+                                    <span class="badge badge-danger">
+                                       <i class="fas fa-ban"></i> Blocked
+                                    </span>
+                                 @elseif($row->status ==2)
+                                    <span class="badge badge-warning">
+                                       <i class="fas fa-archive"></i> Closed
+                                    </span>
+                                 @else
+                                    <span class="badge badge-secondary">
+                                       Unknown
+                                    </span>
+                                 @endif
+
                                  </td>
                               </tr>
                                @endforeach

@@ -159,7 +159,7 @@
 
                     <div class="text-end">
                         <p>If not registered, <a href="{{ route('registration') }}">Click Here for Registration</a></p>
-                        <p><a href="">Forgot user id or password?</a></p>
+                        <!--<p><a href="">Forgot user id or password?</a></p>-->
                     </div>
                 </form>
 

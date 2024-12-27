@@ -89,9 +89,16 @@ Route::put('/profile/update-password', [ProfileController::class, 'updatePasswor
 
 
 
+
 Route::get('/grievances/create', [GrievanceController::class, 'create'])->name('addGrievance');
 Route::post('/grievances', [GrievanceController::class, 'store'])->name('submitGrievance');
 Route::get('/grievances', [GrievanceController::class, 'index'])->name('viewGrievance');
+Route::get('/displayReply/{id}', [GrievanceController::class, 'show'])->name('displayReply');
+Route::get('/grievances/{id}', [GrievanceController::class, 'show'])->name('grievances.show');
+
+Route::post('grievances/{id}/reply', [GrievanceController::class, 'storeReply'])->name('grievances.reply.store');
+
+
 
 
 
@@ -269,19 +276,21 @@ Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard'],function () {
     });
 
 
-    Route::group(['prefix'=>'grievance','as'=> 'grievance.'], function() {
-        Route::get('/', [GrievanceAdminController::class,'index'])->name('index');
-        Route::get('create', [GrievanceAdminController::class,'create'])->name('create');
-        Route::post('store', [GrievanceAdminController::class,'store'])->name('store');
-        Route::get('show/{id}', [GrievanceAdminController::class,'show'])->name('show');
-        Route::get('{userModel:slug}/edit', [GrievanceAdminController::class,'edit'])->name('edit');
-        Route::put('{userModel:slug}', [GrievanceAdminController::class,'update'])->name('update');
-        Route::get('{role-manager:slug}/delate', [GrievanceAdminController::class,'destroy'])->name('destroy');
-        Route::post('updateStatus', [GrievanceAdminController::class,'updateStatus'])->name('updateStatus');
-        Route::post('search', [GrievanceAdminController::class,'index'])->name('search');
-        Route::post('export-excel', [GrievanceAdminController::class,'export_excel'])->name('export-excel');
-
+    Route::group(['prefix' => 'grievance', 'as' => 'grievance.'], function() {
+        Route::get('/', [GrievanceAdminController::class, 'index'])->name('index');
+        Route::get('create', [GrievanceAdminController::class, 'create'])->name('create');
+        Route::post('store', [GrievanceAdminController::class, 'store'])->name('store');
+        Route::get('show/{id}', [GrievanceAdminController::class, 'show'])->name('show');
+        Route::get('{grievance:slug}/edit', [GrievanceAdminController::class, 'edit'])->name('edit');
+        Route::put('{grievance:slug}', [GrievanceAdminController::class, 'update'])->name('update');
+        Route::get('{grievance:slug}/delete', [GrievanceAdminController::class, 'destroy'])->name('destroy');
+        Route::post('updateStatus', [GrievanceAdminController::class, 'updateStatus'])->name('updateStatus');
+        Route::post('search', [GrievanceAdminController::class, 'index'])->name('search');
+        Route::post('export-excel', [GrievanceAdminController::class, 'export_excel'])->name('export-excel');
+        Route::post('/add-update', [GrievanceAdminController::class, 'addUpdate'])->name('grievance_update');
+        Route::post('updateReply', [GrievanceAdminController::class, 'updateReply'])->name('updateReply');
     });
+    
 
 
 
