@@ -61,7 +61,7 @@
          <div class="card-body">
             <p>{{ $reply->reply }}</p>
             @if ($reply->attachment)
-               <a href="{{ asset('storage/' . $reply->attachment) }}" target="_blank">View Attachment</a>
+                 <a href="{{ asset($reply->attachment) }}" target="_blank">View Document</a>
             @endif
          </div>
       </div>

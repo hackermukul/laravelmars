@@ -46,18 +46,23 @@
                                 <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $customer['email'] ?? '') }}" required>
                                 @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
+                             
 
                             <div class="form-group mb-3">
                                 <label for="phone">Phone (Optional)</label>
                                 <input type="text" name="mobile_no" id="mobile_no" class="form-control @error('mobile_no') is-invalid @enderror" value="{{ old('mobile_no', $customer['mobile_no'] ?? '') }}">
                                 @error('mobile_no')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
-
-                            <div class="form-group mb-3">
+                            
+                             @if(!in_array($customer['registrations_type'], ['student', 'parent', 'alumni']))
+                                   <div class="form-group mb-3">
                                 <label for="father_name">Father's Name</label>
                                 <input type="text" name="father_name" id="father_name" class="form-control @error('father_name') is-invalid @enderror" value="{{ old('father_name', $customer['father_name'] ?? '') }}" placeholder="Enter father's name">
                                 @error('father_name')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
+                                @endif
+
+                            
 
                             <!-- Dynamic Fields Based on Registration Type -->
                             @if($customer['registrations_type'] == "student" || $customer['registrations_type'] == "alumni" || $customer['registrations_type'] == "parent")
@@ -88,17 +93,19 @@
 
                             @if($customer['registrations_type'] == "staff")
                                 <div class="form-group mb-3">
-                                    <label for="child_name">Child Name</label>
-                                    <input type="text" name="child_name" id="child_name" class="form-control @error('child_name') is-invalid @enderror" value="{{ old('child_name', $customer['child_name'] ?? '') }}" placeholder="Enter child's name">
-                                    @error('child_name')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label for="department">Department</label>
+                                    <input type="text" name="department" id="department" class="form-control @error('department') is-invalid @enderror" value="{{ old('department', $customer['department'] ?? '') }}" placeholder="Enter department">
+                                    @error('department')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
+
+                               
                             @endif
 
                             @if($customer['registrations_type'] == "parent")
                                 <div class="form-group mb-3">
-                                    <label for="department">Department</label>
-                                    <input type="text" name="department" id="department" class="form-control @error('department') is-invalid @enderror" value="{{ old('department', $customer['department'] ?? '') }}" placeholder="Enter department">
-                                    @error('department')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label for="child_name">Child Name</label>
+                                    <input type="text" name="child_name" id="child_name" class="form-control @error('child_name') is-invalid @enderror" value="{{ old('child_name', $customer['child_name'] ?? '') }}" placeholder="Enter child's name">
+                                    @error('child_name')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
                             @endif
 

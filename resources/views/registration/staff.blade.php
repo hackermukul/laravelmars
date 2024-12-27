@@ -195,8 +195,8 @@ body {
 
             <div class="form-group">
                 <label for="mobile">Mobile No</label>
-                <input type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" value="{{ old('mobile') }}" placeholder="Enter mobile number">
-                @error('mobile')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="text" name="mobile_no" class="form-control @error('mobile_no') is-invalid @enderror" value="{{ old('mobile_no') }}" placeholder="Enter mobile number">
+                @error('mobile_no')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
 
             <div class="form-group">

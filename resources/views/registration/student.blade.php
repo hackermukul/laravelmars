@@ -142,7 +142,7 @@ h5 {
                     <div class="col-md-6">
                         <h5>Academic details</h5>
                         <div class="mb-3">
-                            <label for="course" class="form-label">Course</label>
+                            <label for="course" class="form-label">Per Course & Major</label>
                             <input type="text" name="course" class="form-control @error('course') is-invalid @enderror" value="{{ old('course') }}" placeholder="Enter course">
                             @error('course') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>

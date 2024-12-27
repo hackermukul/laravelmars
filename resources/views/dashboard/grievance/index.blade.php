@@ -124,7 +124,7 @@
                                  <th>#</th>
                                  <th width="4%"><input type="checkbox" name="main_check" id="main_check"
                                     onclick="check_uncheck_All_records()" value="" /></th>
-                                 <th>Name</th>
+                                 <th>Subject</th>
                                  <th>Grievance</th>
                                  <th>Added On</th>
                                  <th>Added By</th>

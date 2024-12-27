@@ -11,6 +11,14 @@ use DB;
 
 class GrievanceController extends Controller
 {
+    public function __construct(Request $request)
+    {
+        if (!$request->session()->has('customer')) {
+            redirect()->route('loginForm')->withErrors(['message' => 'Please log in to access your profile.'])->send();
+        }
+    }
+
+
     /**
      * Display the form for creating a new grievance.
      *
@@ -51,10 +59,26 @@ class GrievanceController extends Controller
         // Handle file upload if document is provided
         if ($request->hasFile('document')) {
             $document = $request->file('document');
-            $documentPath = $document->store('grievances', 'public');
-            $grievance->document_path = $documentPath;
+        
+            $destinationPath = public_path('build/assets/uploads/grievance');
+        
+            // Ensure the directory exists
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true); // Create the directory if it doesn't exist
+            }
+        
+            // Create a custom filename
+            $customName = 'grievance_' . session('customer')['id'] . '_' . time() . '.' . $document->getClientOriginalExtension();
+        
+            // Move the file to the custom directory
+            $document->move($destinationPath, $customName);
+        
+            // Save the relative file path to the database
+            $grievance->document_path = 'build/assets/uploads/testr/grievance/' . $customName;
         }
-
+        
+        
+        
         // Save the grievance entry to the database
         $grievance->save();
 
@@ -125,9 +149,27 @@ class GrievanceController extends Controller
     // Handle file upload if exists
     $attachmentPath = null;
     if ($request->hasFile('attachment')) {
-        
-        $attachmentPath = $request->file('attachment')->store('grievance_attachments', 'public');
+        // Get the uploaded file
+        $attachment = $request->file('attachment');
+    
+        // Define the custom directory path (e.g., public/build/assets/attachments)
+        $destinationPath = public_path('build/assets/uploads/attachments');
+    
+        // Ensure the directory exists
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0777, true); // Create the directory if it doesn't exist
+        }
+    
+        // Create a custom filename
+        $customName = 'attachment_' . session('customer')['id'] . '_' . time() . '.' . $attachment->getClientOriginalExtension();
+    
+        // Move the file to the custom directory
+        $attachment->move($destinationPath, $customName);
+    
+        // Save the relative file path to the database
+        $attachmentPath = 'build/assets/uploads/attachments/' . $customName;
     }
+    
 
     // Create the reply
     GrievanceReply::create([

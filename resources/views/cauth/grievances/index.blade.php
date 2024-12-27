@@ -46,7 +46,7 @@
                 <td>{{ $grievance->grievance }}</td>
                 <td>
                     @if ($grievance->document_path)
-                        <a href="{{ asset('storage/' . $grievance->document_path) }}" target="_blank">View Document</a>
+                           <a href="{{ asset($grievance->document_path) }}" target="_blank">View Document</a>
                     @else
                         N/A
                     @endif

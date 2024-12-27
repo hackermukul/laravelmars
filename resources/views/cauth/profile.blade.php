@@ -34,6 +34,13 @@
     <li class="list-group-item">
         <strong>Name:</strong> {{ $customer['name'] }}
     </li>
+     @if(!in_array($customer['registrations_type'], ['student', 'parent', 'alumni']))
+        <li class="list-group-item">
+            <strong>Father Name:</strong> {{ $customer['father_name'] ?? 'N/A' }}
+        </li>
+    @endif
+
+    
     <li class="list-group-item">
         <strong>Email:</strong> {{ $customer['email'] }}
     </li>
@@ -55,18 +62,22 @@
         <li class="list-group-item">
             <strong>Academic Session:</strong> {{ $customer['academic_session'] ?? 'N/A' }}
         </li>
-        <li class="list-group-item">
-            <strong>Father Name:</strong> {{ $customer['father_name'] ?? 'N/A' }}
-        </li>
+       
     @elseif($customer['registrations_type'] == 'parent')
         <li class="list-group-item">
+            <strong>Course:</strong> {{ $customer['course'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Semester:</strong> {{ $customer['semester'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Roll No:</strong> {{ $customer['roll_no'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
+            <strong>Academic Session:</strong> {{ $customer['academic_session'] ?? 'N/A' }}
+        </li>
+        <li class="list-group-item">
             <strong>Child Name:</strong> {{ $customer['child_name'] ?? 'N/A' }}
-        </li>
-        <li class="list-group-item">
-            <strong>Department:</strong> {{ $customer['department'] ?? 'N/A' }}
-        </li>
-        <li class="list-group-item">
-            <strong>Father Name:</strong> {{ $customer['father_name'] ?? 'N/A' }}
         </li>
     @elseif($customer['registrations_type'] == 'staff')
        

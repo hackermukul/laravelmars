@@ -31,7 +31,7 @@ class StudentRegistrationController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'father_name' => 'required|string|max:255',
-            'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+            'mobile_no' => 'required|digits:10|unique:registrations,mobile_no', // Check mobile uniqueness
             'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
             'course' => 'required|string|max:255',
             'semester' => 'required|string|max:255',
@@ -69,7 +69,7 @@ class StudentRegistrationController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'father_name' => 'required|string|max:255',
-            'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+            'mobile_no' => 'required|digits:10|unique:registrations,mobile_no', // Check mobile uniqueness
             'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
             'department' => 'required|string|max:255',
             'user_id' => 'required|string|max:50|unique:registrations,user_id', // Ensure user_id is unique
@@ -82,7 +82,7 @@ class StudentRegistrationController extends Controller
     $registration->name = $validated['name'];
     $registration->registrations_type = "staff";
     $registration->father_name = $validated['father_name'];
-    $registration->mobile_no = $validated['mobile'];
+    $registration->mobile_no = $validated['mobile_no'];
     $registration->email = $validated['email'];
     $registration->department = $validated['department'];
     $registration->user_id = $validated['user_id'];
@@ -100,7 +100,7 @@ public function alumnisubmitForm(Request $request)
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'father_name' => 'required|string|max:255',
-            'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+            'mobile_no' => 'required|digits:10|unique:registrations,mobile_no', // Check mobile uniqueness
             'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
             'course' => 'required|string|max:255',
             //'semester' => 'required|string|max:255',
@@ -137,7 +137,7 @@ public function parentsubmitForm(Request $request)
     $validated = $request->validate([
         'name' => 'required|string|max:255',
         'child_name' => 'required|string|max:255',
-        'mobile' => 'required|digits:10|unique:registrations,mobile', // Check mobile uniqueness
+        'mobile_no' => 'required|digits:10|unique:registrations,mobile_no', // Check mobile uniqueness
             'email' => 'required|email|max:255|unique:registrations,email', // Check email uniqueness
         'course' => 'required|string|max:255',
         'semester' => 'required|string|max:255',

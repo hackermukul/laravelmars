@@ -224,7 +224,7 @@ body {
                         
                         <!-- Course Field -->
                         <div class="form-group row">
-                            <label for="course" class="col-sm-3 col-form-label">Per Course & Major </label>
+                            <label for="course" class="col-sm-3 col-form-label">Course & Major </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control @error('course') is-invalid @enderror" id="course" name="course" placeholder="Enter course" value="{{ old('course') }}">
                                 @error('course') <div class="invalid-feedback">{{ $message }}</div> @enderror

@@ -230,8 +230,27 @@ class GrievanceAdminController extends Controller
     // Handle file upload if present
     $attachmentPath = null;
     if ($request->hasFile('attachment')) {
-        $attachmentPath = $request->file('attachment')->store('attachments', 'public');
+        // Get the uploaded file
+        $attachment = $request->file('attachment');
+    
+        // Define the custom directory path (e.g., public/build/assets/attachments)
+        $destinationPath = public_path('build/assets/uploads/attachments');
+    
+        // Ensure the directory exists
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0777, true); // Create the directory if it doesn't exist
+        }
+    
+        // Create a custom filename
+        $customName = 'attachment_' . Auth::user()->id . '_' . time() . '.' . $attachment->getClientOriginalExtension();
+    
+        // Move the file to the custom directory
+        $attachment->move($destinationPath, $customName);
+    
+        // Save the relative file path to the database
+        $attachmentPath = 'build/assets/uploads/attachments/' . $customName;
     }
+    
 
     // Insert reply into the grievance_replies table
     $grievanceReply = new GrievanceReply();

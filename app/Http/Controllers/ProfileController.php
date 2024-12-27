@@ -48,20 +48,23 @@ class ProfileController extends Controller
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:registrations,email,' . $user->id,
         'mobile_no' => 'required|string|max:15',
-        'father_name' => 'required|string|max:255',
     ];
 
     // Add validation rules for specific user types
-    if ($customer['registrations_type'] == 'student') {
+    if ($user->registrations_type == 'student') {
         $rules['course'] = 'nullable|string|max:255';
         $rules['semester'] = 'nullable|string|max:50';
         $rules['roll_no'] = 'nullable|string|max:50';
         $rules['academic_session'] = 'nullable|string|max:100';
-    } elseif ($customer['registrations_type'] == 'parent') {
+
+    } elseif ($user->registrations_type == 'parent') {
         $rules['child_name'] = 'nullable|string|max:255';
-        $rules['department'] = 'nullable|string|max:255';
+        $rules['course'] = 'nullable|string|max:255';
+        $rules['semester'] = 'nullable|string|max:50';
+        $rules['roll_no'] = 'nullable|string|max:50';
+        $rules['academic_session'] = 'nullable|string|max:100';
     }
-    elseif ($customer['registrations_type'] == 'staff') {
+    elseif ($user->registrations_type == 'staff') {
         $rules['department'] = 'nullable|string|max:255';
     }
 
@@ -74,15 +77,19 @@ class ProfileController extends Controller
     $user->father_name = $validated['father_name'] ?? null;
 
     // Update fields based on the user type
-    if ($customer['registrations_type'] == 'student') {
+    if ($user->registrations_type == 'student') {
         $user->course = $validated['course'] ?? null;
         $user->semester = $validated['semester'] ?? null;
         $user->roll_no = $validated['roll_no'] ?? null;
         $user->academic_session = $validated['academic_session'] ?? null;
-    } elseif ($customer['registrations_type'] == 'parent') {
+    } elseif ($user->registrations_type == 'parent') {
         $user->child_name = $validated['child_name'] ?? null;
+        $user->course = $validated['course'] ?? null;
+        $user->semester = $validated['semester'] ?? null;
+        $user->roll_no = $validated['roll_no'] ?? null;
+        $user->academic_session = $validated['academic_session'] ?? null;
     }
-    elseif ($customer['registrations_type'] == 'staff') {
+    elseif ($user->registrations_type == 'staff') {
         $user->department = $validated['department'] ?? null;
     }
 
@@ -98,7 +105,7 @@ class ProfileController extends Controller
 
 
     // Show change password form
-    public function changePasswordForm()
+    public function changePasswordForm(Request $request)
     {
         $customer = $request->session()->get('customer');
         if (!$customer) {
