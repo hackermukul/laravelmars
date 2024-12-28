@@ -131,7 +131,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header text-center">
-            <h4>Student/Staff/Alumni/Parent login  </h4>
+            <h4>Reset Password  </h4>
         </div>
 
         <div class="card-body">
@@ -139,30 +139,31 @@
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
-            <form action="{{ route('customer_login') }}" method="post" id="loginForm" novalidate="novalidate" style="margin-top:25px" autocomplete="off">
-                    @csrf
-                    <div class="input-group" style="margin-bottom: 20px;">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror" placeholder="Enter user id" name="user_id" value="{{ old('user_id') }}" autocomplete="off">
-                        @error('user_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
 
-                    <div class="input-group" style="margin-bottom: 20px;">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter password" name="password" autocomplete="off">
-                        @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
 
-                    <div class="input-group" style="margin-bottom: 20px; float:right">
-                        <button type="submit" class="btn btn-success btn-block" style="padding: 7px 20px;">Login</button>
-                    </div>
+   
+    <form action="{{ route('password.reset.direct') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="user_id">User ID</label>
+            <input type="text" name="user_id" id="user_id" class="form-control @error('user_id') is-invalid @enderror" required>
+            @error('user_id') <span class="text-danger">{{ $message }}</span> @enderror
+        </div>
 
-                    <div class="text-end">
-                        <p>If not registered, <a href="{{ route('registration') }}">Click Here for Registration</a></p>
-                        <p><a href="{{ route('password.request') }}">Forgot user ID or password?</a></p>
+        <div class="form-group">
+            <label for="password">New Password</label>
+            <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required>
+            @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+        </div>
 
-                    </div>
-                </form>
+        <div class="form-group">
+            <label for="password_confirmation">Confirm Password</label>
+            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Reset Password</button>
+    </form>
+
 
         </div>
     </div>

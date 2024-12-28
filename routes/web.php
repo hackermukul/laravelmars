@@ -16,6 +16,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GrievanceController;
 use App\Http\Controllers\GrievanceAdminController;
 
+use App\Http\Controllers\ForgotPasswordController;
 
 
 use App\Http\Controllers\DashboardController;
@@ -86,6 +87,10 @@ Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('editProfi
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('updateProfile');
 Route::get('/profile/change-password', [ProfileController::class, 'changePasswordForm'])->name('changePassword');
 Route::put('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
+
+
+Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
+Route::post('forgot-password', [ForgotPasswordController::class, 'processForgotPassword'])->name('password.reset.direct');
 
 
 
