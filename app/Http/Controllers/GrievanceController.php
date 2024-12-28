@@ -60,7 +60,7 @@ class GrievanceController extends Controller
         if ($request->hasFile('document')) {
             $document = $request->file('document');
         
-            $destinationPath = public_path('build/assets/uploads/grievance');
+            $destinationPath = base_path('build/assets/uploads/grievance');
         
             // Ensure the directory exists
             if (!file_exists($destinationPath)) {
@@ -153,7 +153,7 @@ class GrievanceController extends Controller
         $attachment = $request->file('attachment');
     
         // Define the custom directory path (e.g., public/build/assets/attachments)
-        $destinationPath = public_path('build/assets/uploads/attachments');
+        $destinationPath = base_path('build/assets/uploads/attachments');
     
         // Ensure the directory exists
         if (!file_exists($destinationPath)) {

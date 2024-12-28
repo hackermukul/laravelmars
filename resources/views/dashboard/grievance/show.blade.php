@@ -73,11 +73,11 @@
                               
                                  @if($view_data[0]->status ==1)
                                     <span class="badge badge-success">
-                                       <i class="fas fa-check"></i> Active
+                                       <i class="fas fa-check"></i> In Process
                                     </span>
                                  @elseif($view_data[0]->status ==0)
                                     <span class="badge badge-danger">
-                                       <i class="fas fa-ban"></i> Blocked
+                                       <i class="fas fa-ban"></i> Pending
                                     </span>
                                  @elseif($view_data[0]->status ==2)
                                     <span class="badge badge-warning">

@@ -130,19 +130,19 @@
                            }
                         }
                         ?>
-                     <li class="nav-item has-treeview <?=$is_open?>">
-                        <a href="#" class="nav-link <?=$active?>">
-                           <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
-                           <p>
-                              Company Profile
-                              <i class="fa fa-angle-left right"></i>
+                     <!--<li class="nav-item has-treeview <?=$is_open?>">-->
+                     <!--   <a href="#" class="nav-link <?=$active?>">-->
+                     <!--      <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>-->
+                     <!--      <p>-->
+                     <!--         Company Profile-->
+                     <!--         <i class="fa fa-angle-left right"></i>-->
                               <!-- <span class="badge badge-info right">6</span> -->
-                           </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                           <?=$left_menu_company_profile?>
-                        </ul>
-                     </li>
+                     <!--      </p>-->
+                     <!--   </a>-->
+                     <!--   <ul class="nav nav-treeview">-->
+                     <!--      <?=$left_menu_company_profile?>-->
+                     <!--   </ul>-->
+                     <!--</li>-->
                      @endif
 
                      @if($left_menu_grievance!= '')
