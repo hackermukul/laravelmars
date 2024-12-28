@@ -53,15 +53,14 @@
                                 <input type="text" name="mobile_no" id="mobile_no" class="form-control @error('mobile_no') is-invalid @enderror" value="{{ old('mobile_no', $customer['mobile_no'] ?? '') }}">
                                 @error('mobile_no')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
-                            
-                             @if(!in_array($customer['registrations_type'], ['student', 'parent', 'alumni']))
-                                   <div class="form-group mb-3">
+                            @if($customer['registrations_type'] == 'student' || $customer['registrations_type'] == 'staff' || $customer['registrations_type'] == 'alumni')
+                              <div class="form-group mb-3">
                                 <label for="father_name">Father's Name</label>
                                 <input type="text" name="father_name" id="father_name" class="form-control @error('father_name') is-invalid @enderror" value="{{ old('father_name', $customer['father_name'] ?? '') }}" placeholder="Enter father's name">
                                 @error('father_name')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
-                                @endif
-
+                            @endif
+                            
                             
 
                             <!-- Dynamic Fields Based on Registration Type -->
@@ -71,12 +70,14 @@
                                     <input type="text" name="course" id="course" class="form-control @error('course') is-invalid @enderror" value="{{ old('course', $customer['course'] ?? '') }}" placeholder="Enter course">
                                     @error('course')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
-
+                             @if($customer['registrations_type'] == 'student' || $customer['registrations_type'] == "parent" )
                                 <div class="form-group mb-3">
                                     <label for="semester">Semester</label>
                                     <input type="text" name="semester" id="semester" class="form-control @error('semester') is-invalid @enderror" value="{{ old('semester', $customer['semester'] ?? '') }}" placeholder="Enter semester">
                                     @error('semester')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
+
+                                @endif
 
                                 <div class="form-group mb-3">
                                     <label for="roll_no">Roll No</label>

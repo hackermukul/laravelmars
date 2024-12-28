@@ -56,6 +56,8 @@ class ProfileController extends Controller
         $rules['semester'] = 'nullable|string|max:50';
         $rules['roll_no'] = 'nullable|string|max:50';
         $rules['academic_session'] = 'nullable|string|max:100';
+        $rules['father_name'] = 'nullable|string|max:50';
+
 
     } elseif ($user->registrations_type == 'parent') {
         $rules['child_name'] = 'nullable|string|max:255';
@@ -64,8 +66,15 @@ class ProfileController extends Controller
         $rules['roll_no'] = 'nullable|string|max:50';
         $rules['academic_session'] = 'nullable|string|max:100';
     }
+    elseif ($user->registrations_type == 'alumni') {
+        $rules['course'] = 'nullable|string|max:255';
+        $rules['roll_no'] = 'nullable|string|max:50';
+        $rules['academic_session'] = 'nullable|string|max:100';
+        $rules['father_name'] = 'nullable|string|max:50';
+    }
     elseif ($user->registrations_type == 'staff') {
         $rules['department'] = 'nullable|string|max:255';
+        $rules['father_name'] = 'nullable|string|max:50';
     }
 
     $validated = $request->validate($rules);
@@ -74,7 +83,6 @@ class ProfileController extends Controller
     $user->name = $validated['name'];
     $user->email = $validated['email'];
     $user->mobile_no = $validated['mobile_no'] ?? null;
-    $user->father_name = $validated['father_name'] ?? null;
 
     // Update fields based on the user type
     if ($user->registrations_type == 'student') {
@@ -82,6 +90,8 @@ class ProfileController extends Controller
         $user->semester = $validated['semester'] ?? null;
         $user->roll_no = $validated['roll_no'] ?? null;
         $user->academic_session = $validated['academic_session'] ?? null;
+        $user->father_name = $validated['father_name'] ?? null;
+
     } elseif ($user->registrations_type == 'parent') {
         $user->child_name = $validated['child_name'] ?? null;
         $user->course = $validated['course'] ?? null;
@@ -89,8 +99,18 @@ class ProfileController extends Controller
         $user->roll_no = $validated['roll_no'] ?? null;
         $user->academic_session = $validated['academic_session'] ?? null;
     }
+    elseif ($user->registrations_type == 'alumni') {
+        $user->course = $validated['course'] ?? null;
+        $user->semester = $validated['semester'] ?? null;
+        $user->roll_no = $validated['roll_no'] ?? null;
+        $user->academic_session = $validated['academic_session'] ?? null;
+        $user->father_name = $validated['father_name'] ?? null;
+    }
+
     elseif ($user->registrations_type == 'staff') {
         $user->department = $validated['department'] ?? null;
+        $user->father_name = $validated['father_name'] ?? null;
+
     }
 
     // Save the updated user

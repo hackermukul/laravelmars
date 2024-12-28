@@ -319,7 +319,9 @@ class UserController extends Controller
             'department_id' => 'required|not_in:-- Choose department --',
             'country_id'  =>'required|max:200',
             'email' => 'required|unique:users,email,'.$request->id,
-            'password' => 'required|string|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
+            //'password' => 'required|string|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
+		     'password' => 'required',
+
             'mobile_no' => 'required|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:9',
             'status'          => 'required',
         ]);

@@ -34,11 +34,12 @@
     <li class="list-group-item">
         <strong>Name:</strong> {{ $customer['name'] }}
     </li>
-     @if(!in_array($customer['registrations_type'], ['student', 'parent', 'alumni']))
-        <li class="list-group-item">
+    @if($customer['registrations_type'] == 'student' || $customer['registrations_type'] == 'staff' || $customer['registrations_type'] == 'alumni')
+     <li class="list-group-item">
             <strong>Father Name:</strong> {{ $customer['father_name'] ?? 'N/A' }}
         </li>
     @endif
+    
 
     
     <li class="list-group-item">
@@ -49,13 +50,15 @@
     </li>
 
     <!-- Conditional Data -->
-    @if($customer['registrations_type'] == 'student')
+    @if($customer['registrations_type'] == 'student' || $customer['registrations_type'] == 'alumni')
         <li class="list-group-item">
             <strong>Course:</strong> {{ $customer['course'] ?? 'N/A' }}
         </li>
+         @if($customer['registrations_type'] == 'student' )
         <li class="list-group-item">
             <strong>Semester:</strong> {{ $customer['semester'] ?? 'N/A' }}
         </li>
+        @endif
         <li class="list-group-item">
             <strong>Roll No:</strong> {{ $customer['roll_no'] ?? 'N/A' }}
         </li>
@@ -86,12 +89,7 @@
         </li>
     @endif
 
-    <!-- Default case for other types -->
-    @if(!in_array($customer['registrations_type'], ['student', 'parent', 'staff']))
-        <li class="list-group-item">
-            <strong>Other Data:</strong> {{ $customer['additional_info'] ?? 'N/A' }}
-        </li>
-    @endif
+    
 </ul>
 
                     <hr>

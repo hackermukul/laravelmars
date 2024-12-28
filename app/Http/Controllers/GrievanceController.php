@@ -74,7 +74,7 @@ class GrievanceController extends Controller
             $document->move($destinationPath, $customName);
         
             // Save the relative file path to the database
-            $grievance->document_path = 'build/assets/uploads/testr/grievance/' . $customName;
+            $grievance->document_path = 'build/assets/uploads/grievance/' . $customName;
         }
         
         

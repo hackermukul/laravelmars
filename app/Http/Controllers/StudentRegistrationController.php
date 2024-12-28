@@ -156,7 +156,7 @@ public function parentsubmitForm(Request $request)
     $registration->course = $validated['course'];
     $registration->semester = $validated['semester'];
     $registration->roll_no = $validated['roll_no'];
-    $registration->session = $validated['session'];
+    $registration->academic_session = $validated['session'];
     $registration->user_id = $validated['user_id'];
     $registration->password = bcrypt($validated['password']); // Encrypt the password
     $registration->registrations_type = "parent";  // Assuming "parent" as type, adjust as needed

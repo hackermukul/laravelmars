@@ -1,9 +1,7 @@
  <!-- Footer Section -->
          <footer class="footer text-center">
             <div class="container">
-               <p><strong>College Name:</strong> J D Women's College</p>
-               <p><strong>Address:</strong> Baily Road, Patna</p>
-              
+             
                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                </p>
             </div>
