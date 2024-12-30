@@ -10,7 +10,17 @@
             <div class="">
                <div class="row">
                   <div id="headerImage" class="col-lg-12">
-                     <a href="{{ route('home') }}"><img src="https://collegeebook.in/uploads/logos/b4880f34de8954c9fa361f2bf8b9b6c3.png" class="img-responsive" style="box-shadow: 4px 0px 8px 3px #fff;max-width: 110%;height:161px;"></a>
+                     <a href="{{ route('home') }}">
+                     <!-- Logo Section -->
+@if($companyProfile->logo)
+    <!-- If logo exists, display it -->
+    <img src="{{ asset($companyProfile->logo) }}" class="img-responsive" style="box-shadow: 4px 0px 8px 3px #fff;max-width: 110%;height:161px;">
+@else
+    <!-- Fallback to a default logo if no logo exists -->
+    <img src="https://collegeebook.in/uploads/logos/b4880f34de8954c9fa361f2bf8b9b6c3.png" class="img-responsive" style="box-shadow: 4px 0px 8px 3px #fff;max-width: 110%;height:161px;">
+@endif
+
+                     </a>
                   </div>
                   <div>
                      <ul class="nav navbar-nav navbar-right" style="height: 0px;padding-right: 20px;">
@@ -45,7 +55,12 @@
                             {{-- Show links for guests --}}
                             <li class="nav-item"><a class="nav-link" href="{{ route('loginForm') }}">Login</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('registration') }}">Registration</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Admin Login</a></li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="http://127.0.0.1:8000/secureRegions">Admin Login</a>
+                           </li>
+                            <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('committee') }}">Grievance Committee</a>
+                              </li>
                         @endif
 
                 </ul>

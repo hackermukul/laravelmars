@@ -16,6 +16,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GrievanceController;
 use App\Http\Controllers\GrievanceAdminController;
 use App\Http\Controllers\GrievanceCommitteeController;
+use App\Http\Controllers\GrievanceReportController;
+
 
 use App\Http\Controllers\ForgotPasswordController;
 
@@ -52,6 +54,7 @@ Route::fallback(function(){
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about', [HomeController::class,'about'])->name('about');
 Route::post('/sendEnquiry', [HomeController::class,'sendEnquiry'])->name('sendEnquiry');
+Route::get('/grievance-committee', [HomeController::class, 'committee'])->name('committee');
 
 
 Route::get('/registration', [HomeController::class,'registration'])->name('registration');
@@ -92,7 +95,9 @@ Route::put('/profile/update-password', [ProfileController::class, 'updatePasswor
 
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
 Route::post('forgot-password', [ForgotPasswordController::class, 'processForgotPassword'])->name('password.reset.direct');
+Route::get('show-userId', [ForgotPasswordController::class, 'showUserIdForm'])->name('userId.request');
 
+Route::post('/show-user-id', [ForgotPasswordController::class, 'getUserId'])->name('showuserId.reset.direct');
 
 
 
@@ -307,6 +312,26 @@ Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard'],function () {
         Route::get('{role-manager:slug}/delate', [GrievanceCommitteeController::class,'destroy'])->name('destroy');
         Route::post('updateStatus', [GrievanceCommitteeController::class,'updateStatus'])->name('updateStatus');
         Route::post('search', [GrievanceCommitteeController::class,'index'])->name('search');
+        Route::post('export-excel', [GrievanceCommitteeController::class,'export_excel'])->name('export-excel');
+        Route::get('setPositions', [GrievanceCommitteeController::class,'setPositions'])->name('setPositions');
+        Route::post('GetCompleteCountryList', [GrievanceCommitteeController::class,'GetCompleteCountryList'])->name('GetCompleteCountryList');
+        Route::post('GetCompleteCategoryListNewPos', [GrievanceCommitteeController::class,'GetCompleteCategoryListNewPos'])->name('GetCompleteCategoryListNewPos');
+        Route::post('getState', [GrievanceCommitteeController::class,'getState'])->name('getState');
+
+    });
+    
+    Route::group(['prefix'=>'grievance_report','as'=> 'grievance_report.'], function() {
+        Route::get('/', [GrievanceReportController::class,'index'])->name('index');
+        Route::get('create', [GrievanceCommitteeController::class,'create'])->name('create');
+        Route::post('store', [GrievanceCommitteeController::class,'store'])->name('store');
+        Route::get('show/{id}', [GrievanceCommitteeController::class,'show'])->name('show');
+        Route::get('{grievance_committees:slug}/edit', [GrievanceCommitteeController::class,'edit'])->name('edit');
+        Route::put('{grievance_committees:slug}', [GrievanceCommitteeController::class,'update'])->name('update');
+        Route::get('{role-manager:slug}/delate', [GrievanceCommitteeController::class,'destroy'])->name('destroy');
+        Route::post('updateStatus', [GrievanceCommitteeController::class,'updateStatus'])->name('updateStatus');
+        Route::post('search', [GrievanceReportController::class,'index'])->name('search');
+        Route::post('chat', [GrievanceReportController::class,'chat'])->name('chat');
+
         Route::post('export-excel', [GrievanceCommitteeController::class,'export_excel'])->name('export-excel');
         Route::get('setPositions', [GrievanceCommitteeController::class,'setPositions'])->name('setPositions');
         Route::post('GetCompleteCountryList', [GrievanceCommitteeController::class,'GetCompleteCountryList'])->name('GetCompleteCountryList');

@@ -162,8 +162,12 @@
         </div>
 
         <button type="submit" class="btn btn-success">Reset Password</button>
-    </form>
+    </form> 
+           <div class="text-end">
+                        <p>If not registered, <a href="{{ route('registration') }}">Click Here for Registration</a></p>
+                        <p><a href="{{ route('userId.request') }}">Check user ID?</a></p>
 
+                    </div>
 
         </div>
     </div>

@@ -61,6 +61,7 @@ class GrievanceCommittee extends Model
             $query->where("urm.id" ,  $params['id']);
 		}
 
+		$query->where("urm.is_deleted" , 0);
 		if(!empty($params['start_date']))
 		{
 			$temp_date = date('Y-m-d' , strtotime($params['start_date']));

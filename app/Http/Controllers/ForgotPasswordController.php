@@ -41,6 +41,35 @@ class ForgotPasswordController extends Controller
     return back()->with('success', 'Password reset successfully.');
 }
 
+    public function showUserIdForm()
+    {
+        return view('home.show-userId');
+    }
+
+    public function getUserId(Request $request)
+    {
+        // Validate the inputs
+        $request->validate([
+            'phone' => 'required|numeric|digits:10',
+            'email' => 'required|email',
+        ]);
+
+        // Fetch the user based on phone and email
+        $user = Registration::where('mobile_no', $request->phone)
+            ->where('email', $request->email)
+            ->first();
+
+        // Check if user exists
+        if ($user) {
+            // Show user ID to the client
+            return redirect()->back()->with('success', 'Your User ID is: ' . $user->user_id);
+        }
+
+        // If no user is found, show an error
+        return redirect()->back()->with('error', 'No user found with the provided details.');
+    }
+
+
 
 
 }

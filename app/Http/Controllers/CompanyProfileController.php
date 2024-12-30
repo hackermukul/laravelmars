@@ -224,8 +224,31 @@ class CompanyProfileController extends Controller
         $companyProfile->country_id     = $request->country_id;
         $companyProfile->state_id       = $request->state_id;
         $companyProfile->city_id        = $request->city_id;
-        $companyProfile->header_color   = $request->header_color;
-        $companyProfile->footer_color   = $request->footer_color;
+        // $companyProfile->header_color   = $request->header_color;
+        // $companyProfile->footer_color   = $request->footer_color;
+        $attachmentPath = null;
+    if ($request->hasFile('logo')) {
+        // Get the uploaded file
+        $attachment = $request->file('logo');
+    
+        // Define the custom directory path (e.g., public/build/assets/attachments)
+        $destinationPath = base_path('build/assets/uploads/logo');
+    
+        // Ensure the directory exists
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0777, true); // Create the directory if it doesn't exist
+        }
+    
+        // Create a custom filename
+        $customName = 'logo_' . Auth::user()->id . '_' . time() . '.' . $attachment->getClientOriginalExtension();
+    
+        // Move the file to the custom directory
+        $attachment->move($destinationPath, $customName);
+    
+        // Save the relative file path to the database
+        $attachmentPath = 'build/assets/uploads/logo/' . $customName;
+    }
+        $companyProfile->logo         = $attachmentPath;
         $companyProfile->status         = $request->status;
         $companyProfile->updated_by     = Auth::user()->id;
         $companyProfile->save();

@@ -311,9 +311,17 @@ class GrievanceCommitteeController extends Controller
                 $update_data['status'] = 0;
                 $action_taken = "Blocked";
             }
+			if($task=="delete")
+            {
+                $update_data['is_deleted'] = 1;
+				$update_data['is_deleted_on'] = date("Y-m-d H:i:s");
+				$update_data['is_deleted_by'] = Auth::user()->id;
+	
+            }
+
             $update_data['updated_at'] = date("Y-m-d H:i:s");
             $update_data['updated_by'] = Auth::user()->id;
-            $response = $this->City->update_operation(array('table'=>"grievance_committees" , 'data'=>$update_data , 'condition'=>$id_arr));
+            $response = $this->GrievanceCommittee->update_operation(array('table'=>"grievance_committees" , 'data'=>$update_data , 'condition'=>$id_arr));
            
             if($response){
                 return redirect()->route('grievance_committees.index')->with('success','Status updated successfully');

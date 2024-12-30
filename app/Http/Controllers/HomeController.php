@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\Mailer;
 use Illuminate\Support\Facades\Mail;
-
+use DB;
 
 class HomeController extends Controller
 {
@@ -95,6 +95,21 @@ class HomeController extends Controller
 
        return redirect()->route('home')->with('success', 'Enquiry submitted successfully!')->withFragment('enquiry-section');
     }
+
+    public function committee(Request $request)
+    {
+
+        if ($request->session()->has('customer')) {
+            return redirect()->route('profile');
+        }
+        $committeeMembers = DB::table('grievance_committees')
+        ->where('status', 1)
+        ->where('is_deleted', 0)
+        ->get();
+         return view('home.grievance-committee', compact('committeeMembers'));
+    }
+
+
 
 
 }

@@ -21,7 +21,7 @@
       <!-- /.container-fluid -->
    </div>
    <section class="content">
-      <div class="row">
+      <div class="row"> 
          <div class="col-12">
             <div class="card">
                <div class="card-header">
@@ -230,7 +230,7 @@
                               </div>
                            </div>
 
-                           <div class="col-lg-4 col-md-4 col-sm-6">
+                           {{-- <div class="col-lg-4 col-md-4 col-sm-6">
                             <x-label for="department" class="ccol-sm-12 label_content px-2 py-0" value="{{ __('Header Color') }}" />
                               <div class="col-sm-12">
                                 <x-input id="header_color" class="block mt-1 w-full" type="color" name="header_color" :value="$companyProfile->header_color"  autofocus autocomplete="header_color" />
@@ -253,35 +253,14 @@
                                     @enderror
                                  </span>
                               </div>
-                           </div>
+                           </div>--}}
 
                            <div class="col-md-4 col-sm-6">
                               <x-label for="Category" class="ccol-sm-12 label_content px-2 py-0" value="{{ __('Upload logo(*)') }}" />
                               <div class="col-sm-12 d-flex">
-                                 <div class="input-group" style="width:90%">
-                                    <div class="custom-file">
-                                       <x-input type="file" name="logo" class="block mt-1 w-full" id="files" :value="old('logo')" @if($companyProfile->logo=='') {{ 'required'}} @endif >
-                                       <label class="custom-file-label form-control-sm" for="files"></label>
-                                        
-                                    </div>
-                                 </div>
+                              <input type="file" name="logo" class="form-control">
                                  
-                                 <div class="custom-file-display">
-                                 
-                                     	@if($companyProfile->logo != '')
-                                          <span class="pip">
-                                          <a target="_blank" href="{{ config('constants.options.MAINSITE').'build/assets/uploads/'.$companyProfile->logo }}">
-                                          <img class="imageThumb" src="{{ config('constants.options.MAINSITE').'build/assets/uploads/'.$companyProfile->logo }}" />
-                                          </a>
-                                          </span>
-                                        @else 
-                                          <span class="pip">
-                                          <img class="imageThumb" src="{{ config('constants.options.MAINSITE').'build/assets/uploads/no-img.png' }}" />
-                                          </span>
-                                       @endif
-
-                                 
-                                 </div>
+                               
                               </div>
                            </div>
 

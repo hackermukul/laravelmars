@@ -112,8 +112,8 @@
                                     <td>
                                         <strong class="full">Logo</strong>
                                         <span class="pip">
-                                            <a target="_blank" href="https://dietdighi.in/assets/upload/company_profile/logo/logo_1.jpg">
-                                                <img class="imageThumb" src="https://dietdighi.in/assets/upload/company_profile/logo/logo_1.jpg" style="width: 50px;" />
+                                            <a target="_blank" href="{{ asset($data_view[0]->logo) }}">
+                                                <img class="imageThumb" src="{{$data_view[0]->logo}}" style="width: 50px;" />
                                             </a>
                                         </span>
                                     </td>

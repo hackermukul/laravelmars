@@ -4,9 +4,10 @@
         <x-partials.head />
     </head>
     <body>
-    <x-partials.header />
+    <x-partials.header :companyProfile="$companyProfile" />
         <main>{{ $slot }} </main>
-        <x-partials.footer />
+         <x-partials.footer :companyProfile="$companyProfile" />
+
         @livewireScripts
     </body>
 </html>

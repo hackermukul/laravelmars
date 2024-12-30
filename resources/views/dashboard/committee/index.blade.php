@@ -100,6 +100,9 @@
                         
                         <button type="button" class="btn btn-success btn-sm" onclick="validateRecordsActivate()"><i class="fas fa-check"></i> Active</button>
                         <button type="button" class="btn btn-dark btn-sm" onclick="validateRecordsBlock()"><i class="fas fa-ban"></i> Block</button>
+<button type="button" class="btn btn-dark btn-sm" onclick="validateRecordsDelete()">
+    <i class="fas fa-ban"></i> Delete
+</button>
 
                         @endif
  
@@ -232,6 +235,20 @@
               document.ptype_list_form.submit();
           }
       }
+
+      function validateRecordsDelete() // done
+      {
+          if (validateCheckedRecordsArray()) {
+              //alert("Please select any record to Delete.");
+              toastrDefaultErrorFunc("Please select any record to Delete.");
+              document.getElementById("sel_recds1").focus();
+              return false;
+          } else {
+              document.ptype_list_form.task.value = 'delete';
+              document.ptype_list_form.submit();
+          }
+      }
+
    </script>
    <script>
 window.addEventListener('load' , function(){
