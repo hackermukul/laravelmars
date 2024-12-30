@@ -110,6 +110,7 @@ class GrievanceAdminController extends Controller
 		$search['field_name'] = $field_name;
 		$search['record_status'] = $record_status;
         $search['related_to'] = $user->department_id;
+        $search['super_to'] = $user->id;
 
         //dd($record_status);
 		//$search['search_for'] = "count";

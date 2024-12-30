@@ -27,6 +27,11 @@
                         </div>
                         <div class="card-body">
                            <p>{{ $grievance->grievance }}</p>
+                             @if ($grievance->document_path)
+                           <a href="{{ asset($grievance->document_path) }}" target="_blank">View Document</a>
+                                @else
+                                    N/A
+                                @endif
                         </div>
                      </div>
 
@@ -56,7 +61,17 @@
 
       <div class="card mb-2">
          <div class="card-header">
-            <small class="{{ $colorClass }}">Reply Sent {{ $diff }}</small>
+          <small class="{{ $colorClass }}">
+    Reply  
+    @if(isset($reply->management_id))
+        received from Committee
+    @else
+        sent to Committee
+    @endif
+    {{ $diff }}
+</small>
+
+
          </div>
          <div class="card-body">
             <p>{{ $reply->reply }}</p>

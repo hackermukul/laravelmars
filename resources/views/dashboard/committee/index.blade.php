@@ -91,8 +91,10 @@
                   <div class="card-header">
                      <h3 class="card-title"><span style="color:#FF0000;">Total Records: {{$row_count;}}</span></h3>
                      <div class="float-right">
-                            @if($user_access->add_module==1)	
-                     
+                        @if($user_access->add_module==1)	
+                      <a href="{{ route($main_routes.'.create') }}" > 
+                        <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add
+                        New</button></a>
                         @endif
                          @if($user_access->update_module==1)
                         
@@ -101,9 +103,8 @@
 
                         @endif
  
-                        @if($user_access->export_data==1)
-                        <button type="button" class="btn btn-success btn-sm export_excel"><i class="fas fa-file-excel"></i> Export</button>
-                        @endif
+                       
+
                      </div>
                   </div>
                   <!-- /.card-header -->
@@ -112,8 +113,7 @@
                   @elseif(Session::has('error'))
                      <div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><i class="icon fas fa-ban"></i>{{ Session::get('error') }} </div>
                   @endif
-
-                    @if($user_access->view_module==1)
+                   @if($user_access->view_module==1)
                   <div class="card-body">
                      <form method="POST" action="{{ route($main_routes.'.updateStatus') }}"  id="ptype_list_form" name="ptype_list_form" style="" class="form-horizontal" role="form" enctype="multipart/form-data" accept-charset="utf-8">
                      @csrf
@@ -124,67 +124,42 @@
                                  <th>#</th>
                                  <th width="4%"><input type="checkbox" name="main_check" id="main_check"
                                     onclick="check_uncheck_All_records()" value="" /></th>
-                                 <th>Subject</th>
-                                  <th>Related </th>
-                                  <th>Grievance ID</th>
-                                  <th>Document</th>
-                                 <th>Grievance</th>
+                                 <th>Name</th>
+                                 <th>Email</th>
+                                 <th>Phone</th>
                                  <th>Added On</th>
                                  <th>Added By</th>
                                  <th>Updated By</th>
                                  <th>Status</th>
                               </tr>
                            </thead>
-                         @if(!empty($data_listing))
-   <tbody>
-      @php($count = 0)
-      @foreach ($data_listing as $row)
-         @php($count++)
-         <tr>
-            <td>{{ $count }}</td>
-            <td><input type="checkbox" name="sel_recds[]" id="sel_recds{{$count}}" value="{{$row->id}}" /></td>
-            <td><a href="{{ route($main_routes.'.show', ['id' => $row->id]) }}">
-                {{ $row->subject ?: 'N/A' }}</a></td>
-            <td>{{ $row->realted_to ?: 'N/A' }}</td>
-                        <td>{{ $row->id ?: 'N/A' }}</td>
-                        <td>
-               @if($row->document_path)
-                  <a href="{{ asset($row->document_path) }}" target="_blank">View Document</a>
-               @else
-                  N/A
-               @endif
-            </td>
-            <td>{{ $row->grievance ?: 'N/A' }}</td>
+                          @if(!empty($data_listing))
+                           <tbody>
+                           @php($count=0)
+                            @foreach ($data_listing as $row) @php($count++)
+                              <tr>
+                                 <td>{{$count}}</td>
+                                 <td><input type="checkbox" name="sel_recds[]"
+                                    id="sel_recds{{$count}}"
+                                    value="{{$count}}" /></td>
+                                 <td><a href="{{route($main_routes.'.show', ['id' => $row->id])}}">@if(!empty($row->name)){{$row->name}} @else {{'N/A'}} @endif </a></td>
+                                 <td>@if(!empty($row->email)){{$row->email}} @else {{'N/A'}} @endif</td>
+                                 <td>@if(!empty($row->contact)){{$row->contact}} @else {{'N/A'}} @endif</td>
+                                 <td>@if(!empty($row->created_at)) {{ date('M d/Y', strtotime($row->created_at)) }}  @else {{'N/A'}} @endif</td>
+                                 <td>@if(!empty($row->added_by_name)){{$row->added_by_name}} @else {{'N/A'}} @endif</td>
+                                 <td>@if(!empty($row->updated_by_name)){{$row->updated_by_name}} @else {{'N/A'}} @endif</td>
 
-            
-            <td>{{ $row->created_at ? \Carbon\Carbon::parse($row->created_at)->format('M d, Y') : 'N/A' }}</td>
-            <td>{{ $row->customer_name ?: 'N/A' }}</td>
-            <td>{{ $row->updated_by_name ?: 'N/A' }}</td>
-            <td>
-               @switch($row->status)
-                  @case(1)
-                     <span class="badge badge-success">
-                        <i class="fas fa-check"></i> In Process
-                     </span>
-                     @break
-                  @case(0)
-                     <span class="badge badge-danger">
-                        <i class="fas fa-ban"></i> Pending
-                     </span>
-                     @break
-                  @case(2)
-                     <span class="badge badge-warning">
-                        <i class="fas fa-archive"></i> Closed
-                     </span>
-                     @break
-                  @default
-                     <span class="badge badge-secondary">Unknown</span>
-               @endswitch
-            </td>
-         </tr>
-      @endforeach
-   </tbody>
-@endif
+                                 <td>
+                                 @if($row->status ==1)
+                                    <i class="fas fa-check btn-success btn-sm "></i>
+                                    @else
+                                    <i class="fas fa-ban btn-danger btn-sm "></i>
+                                 @endif
+                                 </td>
+                              </tr>
+                               @endforeach
+                           </tbody>
+                        @endif
 
                         </table>
                      </form>
@@ -192,7 +167,7 @@
                         <div class="pagination_custum"></div>
                      </center>
                   </div>
-                   @else
+                    @else
                   <center>
                        <x-denied />
                   </center>                
@@ -283,7 +258,7 @@ window.addEventListener('load' , function(){
 		$('#search_report_form').attr('target', '_blank');
 		$('#search_report_btn').click();
 		
-		$('#search_report_form').attr('action', '');
+		$('#search_report_form').attr('action', 'https://dietdighi.in/setup/admin/master/Department-Module/department-list');
 		$('#search_report_form').attr('target', '');
 	})
 })

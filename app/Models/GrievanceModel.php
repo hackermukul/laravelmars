@@ -36,7 +36,7 @@ class GrievanceModel extends Model
         ->join('users as u', 'u.id', '=', 'urm.updated_by', 'left')
         ->join('department_models as c', 'c.id', '=', 'urm.related_to', 'left')
         ->join('registrations as r', 'r.id', '=', 'urm.registrations_id', 'left')
-        ->select('urm.*', 'users.name as added_by_name', 'u.name as updated_by_name', 'r.name as customer_name');
+        ->select('urm.*', 'users.name as added_by_name', 'u.name as updated_by_name', 'r.name as customer_name','c.name as realted_to');
 
     // If search parameter is present, count the results
     if (!empty($params['search_for'])) {
@@ -64,8 +64,11 @@ class GrievanceModel extends Model
     }
 
     if (!empty($params['related_to'])) {
+    if ($params['super_to'] != 1) {
         $query->where("urm.related_to", $params['related_to']);
     }
+}
+
 
     // Filter by start date
     if (!empty($params['start_date'])) {

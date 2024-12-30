@@ -40,7 +40,7 @@
                      <div class="divTable">
                         <div class="TableRow">
                            <div class="table_col">
-                              <label class="label_content_br">Data Base Id <span class="colen">:</span></label>
+                              <label class="label_content_br">Grievance Id <span class="colen">:</span></label>
                               @if($view_data[0]->id) {{ $view_data[0]->id}} @else {{'N/A'}} @endif                            
                            </div>
                            <div class="table_col">

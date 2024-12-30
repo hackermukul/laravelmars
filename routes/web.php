@@ -15,6 +15,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GrievanceController;
 use App\Http\Controllers\GrievanceAdminController;
+use App\Http\Controllers\GrievanceCommitteeController;
 
 use App\Http\Controllers\ForgotPasswordController;
 
@@ -294,6 +295,24 @@ Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard'],function () {
         Route::post('export-excel', [GrievanceAdminController::class, 'export_excel'])->name('export-excel');
         Route::post('/add-update', [GrievanceAdminController::class, 'addUpdate'])->name('grievance_update');
         Route::post('updateReply', [GrievanceAdminController::class, 'updateReply'])->name('updateReply');
+    });
+
+    Route::group(['prefix'=>'grievance_committees','as'=> 'grievance_committees.'], function() {
+        Route::get('/', [GrievanceCommitteeController::class,'index'])->name('index');
+        Route::get('create', [GrievanceCommitteeController::class,'create'])->name('create');
+        Route::post('store', [GrievanceCommitteeController::class,'store'])->name('store');
+        Route::get('show/{id}', [GrievanceCommitteeController::class,'show'])->name('show');
+        Route::get('{grievance_committees:slug}/edit', [GrievanceCommitteeController::class,'edit'])->name('edit');
+        Route::put('{grievance_committees:slug}', [GrievanceCommitteeController::class,'update'])->name('update');
+        Route::get('{role-manager:slug}/delate', [GrievanceCommitteeController::class,'destroy'])->name('destroy');
+        Route::post('updateStatus', [GrievanceCommitteeController::class,'updateStatus'])->name('updateStatus');
+        Route::post('search', [GrievanceCommitteeController::class,'index'])->name('search');
+        Route::post('export-excel', [GrievanceCommitteeController::class,'export_excel'])->name('export-excel');
+        Route::get('setPositions', [GrievanceCommitteeController::class,'setPositions'])->name('setPositions');
+        Route::post('GetCompleteCountryList', [GrievanceCommitteeController::class,'GetCompleteCountryList'])->name('GetCompleteCountryList');
+        Route::post('GetCompleteCategoryListNewPos', [GrievanceCommitteeController::class,'GetCompleteCategoryListNewPos'])->name('GetCompleteCategoryListNewPos');
+        Route::post('getState', [GrievanceCommitteeController::class,'getState'])->name('getState');
+
     });
     
 
