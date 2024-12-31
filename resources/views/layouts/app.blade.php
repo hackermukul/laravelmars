@@ -25,7 +25,7 @@
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'plugins/select2-bootstrap4.min.css' }}">
       <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <!-- DataTables -->
+      <!-- DataTables -->
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'dataTables.bootstrap4.min.css' }}">
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'responsive.bootstrap4.min.css' }} ">
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'OverlayScrollbars.min.css' }}">
@@ -34,10 +34,6 @@
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'toastr.min.css'}}">
       <link rel="stylesheet" href="{{ config('constants.options.MAINSITE_Admin').'adminlte.min.css' }}">
       <script src="{{ config('constants.options.MAINSITE_Admin').'plugins/jquery/jquery.min.js' }}"></script>
-
-
-
-      
       <!-- Theme style -->
    </head>
    <body class="hold-transition sidebar-mini layout-fixed">
@@ -86,36 +82,33 @@
                            </p>
                         </a>
                      </li>
-                      @if($left_menu_employee!= '')
-                      
-                        <?php
-                           $is_open = "";
-                           $active = "";
-                           if(!empty($page_is_master))
+                     @if($left_menu_employee!= '')
+                     <?php
+                        $is_open = "";
+                        $active = "";
+                        if(!empty($page_is_master))
+                        {
+                           if($page_is_master==3)
                            {
-                              if($page_is_master==3)
-                              {
-                                 $is_open = "menu-open";
-                                 $active = "active";
-                              }
+                              $is_open = "menu-open";
+                              $active = "active";
                            }
-                           ?>
-                        <li class="nav-item has-treeview <?=$is_open?>">
-                           <a href="#" class="nav-link <?=$active?>">
-                               <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
+                        }
+                        ?>
+                     <li class="nav-item has-treeview <?=$is_open?>">
+                        <a href="#" class="nav-link <?=$active?>">
+                           <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
                            <p>
-                                 Application Setup
-                                 <i class="fa fa-angle-left right"></i>
-                                 <!-- <span class="badge badge-info right">6</span> -->
-                              </p>
-                           </a>
-                           <ul class="nav nav-treeview">
-                              <?=$left_menu_employee?>
-                           </ul>
-                        </li>
-                       @endif
-
-                    
+                              Application Setup
+                              <i class="fa fa-angle-left right"></i>
+                              <!-- <span class="badge badge-info right">6</span> -->
+                           </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                           <?=$left_menu_employee?>
+                        </ul>
+                     </li>
+                     @endif
                      @if($left_menu_company_profile!= '')
                      <?php
                         $is_open = "";
@@ -130,71 +123,65 @@
                            }
                         }
                         ?>
-                    <li class="nav-item has-treeview <?=$is_open?>">
-   <a href="#" class="nav-link <?=$active?>">
-      <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
-      <p>
-         Company Profile
-         <i class="fa fa-angle-left right"></i>
-         <!-- <span class="badge badge-info right">6</span> -->
-      </p>
-   </a>
-   <ul class="nav nav-treeview">
-      <?=$left_menu_company_profile?>
-   </ul>
-</li>
-
-                     @endif
-
-                     @if($left_menu_grievance!= '')
-                      
-                        <?php
-                           $is_open = "";
-                           $active = "";
-                           if(!empty($page_is_master))
-                           {
-                              if($page_is_master==4)
-                              {
-                                 $is_open = "menu-open";
-                                 $active = "active";
-                              }
-                           }
-                           ?>
-                        <li class="nav-item has-treeview <?=$is_open?>">
-                           <a href="#" class="nav-link <?=$active?>">
-                               <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
+                     <li class="nav-item has-treeview <?=$is_open?>">
+                        <a href="#" class="nav-link <?=$active?>">
+                           <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
                            <p>
-                                Grievance
-                                 <i class="fa fa-angle-left right"></i>
-                                 <!-- <span class="badge badge-info right">6</span> -->
-                              </p>
-                           </a>
-                           <ul class="nav nav-treeview">
-                              <?=$left_menu_grievance?>
-                           </ul>
-                        </li>
-                       @endif
-
-                    
-
-                      @if($left_menu_master!= '')
-                        <?php
-                           $is_open = "menu-open";
-                           $active = "active";
-                           if(!empty($page_is_master))
+                              Company Profile
+                              <i class="fa fa-angle-left right"></i>
+                              <!-- <span class="badge badge-info right">6</span> -->
+                           </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                           <?=$left_menu_company_profile?>
+                        </ul>
+                     </li>
+                     @endif
+                     @if($left_menu_grievance!= '')
+                     <?php
+                        $is_open = "";
+                        $active = "";
+                        if(!empty($page_is_master))
+                        {
+                           if($page_is_master==4)
                            {
-                              if($page_is_master==1)
-                              {
-                                 $is_open = "menu-open";
-                                 $active = "active";
-                              }
+                              $is_open = "menu-open";
+                              $active = "active";
                            }
-                     ?>
+                        }
+                        ?>
+                     <li class="nav-item has-treeview <?=$is_open?>">
+                        <a href="#" class="nav-link <?=$active?>">
+                           <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
+                           <p>
+                              Grievance
+                              <i class="fa fa-angle-left right"></i>
+                              <!-- <span class="badge badge-info right">6</span> -->
+                           </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                           <?=$left_menu_grievance?>
+                        </ul>
+                     </li>
+                     @endif
+                     @if($left_menu_master!= '')
+                     <?php
+                        $is_open = "menu-open";
+                        $active = "active";
+                        if(!empty($page_is_master))
+                        {
+                           if($page_is_master==1)
+                           {
+                              $is_open = "menu-open";
+                              $active = "active";
+                           }
+                        }
+                        ?>
                      <li class="nav-item <?=$is_open?>">
                         <a href="#" class="nav-link <?=$active?>">
                            <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
                            <p>
-                            {{ __('Masters') }}
+                              {{ __('Masters') }}
                               <i class="fa fa-angle-left right"></i>
                            </p>
                         </a>
@@ -202,11 +189,8 @@
                            <?=$left_menu_master?>
                         </ul>
                      </li>
-                    @endif
-
-
+                     @endif
                      <!--<li class="nav-item menu-is-opening menu-open">
-                        
                         <a href="#" class="nav-link">
                            <i class="nav-icon fas fa-th" style="font-size: 26px;"></i>
                            <p>
@@ -214,7 +198,7 @@
                               <i class="fas fa-angle-left right"></i>
                            </p>
                         </a>
-
+                        
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                               <a href="{{ route('role-manager.index') }}" class="nav-link">
@@ -258,11 +242,9 @@
                                  <p> {{ __('City') }}</p>
                               </a>
                            </li>
-
+                        
                         </ul>
-                     </li>-->
-
-                     
+                        </li>-->
                   </ul>
                </nav>
             </div>
@@ -299,23 +281,21 @@
       <script src="https://dietdighi.in/assets/admin/lte/plugins/pace-progress/pace.min.js"></script>
       <script src="https://dietdighi.in/assets/admin/lte/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
       <script src="{{ config('constants.options.MAINSITE_Admin').'plugins/select2/js/select2.full.min.js' }}"></script>
-
       <!-- Toastr -->
       <!-- AdminLTE for demo purposes -->
       <script>
-  $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
-
-    //Initialize Select2 Elements
-    $('.select2bs4').select2({
-      theme: 'bootstrap4'
-    })
-
-  })
-</script>
+         $(function () {
+           //Initialize Select2 Elements
+           $('.select2').select2()
+         
+           //Initialize Select2 Elements
+           $('.select2bs4').select2({
+             theme: 'bootstrap4'
+           })
+         
+         })
+      </script>
       <script>
-      
          $("input[data-bootstrap-switch]").each(function(){
               $(this).bootstrapSwitch('state', $(this).prop('checked'));
           });
@@ -368,7 +348,6 @@
           });
          
       </script>
-     
       <script src="https://dietdighi.in/assets/admin/lte/js/common.js"></script>
    </body>
 </html>
