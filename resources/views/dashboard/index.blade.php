@@ -45,18 +45,18 @@
                            <div class="card-body">
                               
                                  <input type="hidden" name="task" id="task" value ="" />
-                                 <table class="table table-bordered table-hover table-striped">
+                                 <table id="example1" class="table table-bordered table-hover table-striped">
                                     <thead>
                                        <tr>
                                           <th>#</th>
-                                          <th width="4%"><input type="checkbox" name="main_check" id="main_check"
-                                             onclick="check_uncheck_All_records()" value="" /></th>
+                                        
+                                             <th>Customer Name</th>
                                              <th>Reply</th>
                                           <th>Subject</th>
                                           <th>Related </th>
                                           <th>Grievance ID</th>
                                          
-                                          <th>Added On</th>
+                                          <th>Document</th>
                                           <th>Messages Ago</th>
                                          
                                           <th>Status</th>
@@ -69,17 +69,21 @@
                                        @php($count++)
                                        <tr>
                                           <td>{{ $count }}</td>
-                                          <td><input type="checkbox" name="sel_recds[]" id="sel_recds{{$count}}" value="{{$row->id}}" /></td>
+                                          
                                         <td><a href="{{ route('grievance.show', ['id' => $row->g_id]) }}">
-                                            {{ $row->subject ?: 'N/A' }}
+                                            {{ $row->customer_name ?: 'N/A' }}
                                         </a></td>
                                          <td>{{ $row->reply ?: 'N/A' }}</td>
+                                        <td>{{ $row->subject ?: 'N/A' }}</td>
+                                        
 
                                           <td>{{ $row->realted_to ?: 'N/A' }}</td>
                                           <td>{{ $row->id ?: 'N/A' }}</td>
+                                          <td>@if($row->attachment)
+               <a href="{{ asset($row->attachment) }}" target="_blank">View Attachment</a>
+            @endif</td>
                           
                                          
-                                          <td>{{ $row->created_at ? \Carbon\Carbon::parse($row->created_at)->format('M d, Y') : 'N/A' }}</td>
                                            <td>
 <?php
       // Parse the created_at timestamp to Carbon instance

@@ -28,45 +28,36 @@
                     </ul>
                 </div>
 
-                <div class="col-md-6">
-                    <div id="grievanceCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#grievanceCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                            <button type="button" data-bs-target="#grievanceCarousel" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#grievanceCarousel" data-bs-slide-to="2"></button>
-                        </div>
+               <div class="col-md-6">
+    <div id="grievanceCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            @foreach($banners as $key => $banner)
+                <button type="button" data-bs-target="#grievanceCarousel" data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}" aria-current="true"></button>
+            @endforeach
+        </div>
 
-                        <div class="carousel-inner rounded">
-                            <div class="carousel-item active">
-                                <img src="banner/1535606622.jpg" class="d-block w-100" alt="First slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Streamline Your Grievance Process</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="banner/sample2.jpg" class="d-block w-100" alt="Second slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Efficient and User-Friendly System</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="banner/sample3.jpg" class="d-block w-100" alt="Third slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Your Voice, Our Responsibility</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#grievanceCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#grievanceCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+        <div class="carousel-inner rounded">
+            @foreach($banners as $key => $banner)
+                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    <img src="{{ asset($banner->image) }}" class="d-block w-100" alt="Banner {{ $key + 1 }}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ $banner->title1 }}</h5> <!-- Assuming the title is stored in title1 -->
                     </div>
                 </div>
+            @endforeach
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#grievanceCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#grievanceCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
             </div>
         </div>
     </div>

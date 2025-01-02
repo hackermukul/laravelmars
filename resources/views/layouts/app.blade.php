@@ -109,6 +109,34 @@
                         </ul>
                      </li>
                      @endif
+                      @if($banner_menu!= '')
+                     <?php
+                        $is_open = "";
+                        $active = "";
+                        if(!empty($page_is_master))
+                        {
+                           if($page_is_master==5)
+                           {
+                              $is_open = "menu-open";
+                              $active = "active";
+                           }
+                        }
+                        ?>
+                     <li class="nav-item has-treeview <?=$is_open?>">
+                        <a href="#" class="nav-link <?=$active?>">
+                           <i class="nav-icon fa fa-th" style="font-size: 23px;"></i>
+                           <p>
+                              Banner
+                              <i class="fa fa-angle-left right"></i>
+                              <!-- <span class="badge badge-info right">6</span> -->
+                           </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                           <?=$banner_menu?>
+                        </ul>
+                     </li>
+                     @endif
+
                      @if($left_menu_company_profile!= '')
                      <?php
                         $is_open = "";

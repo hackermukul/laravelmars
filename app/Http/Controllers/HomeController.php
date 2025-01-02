@@ -6,15 +6,23 @@ use Illuminate\Http\Request;
 use App\Mail\Mailer;
 use Illuminate\Support\Facades\Mail;
 use DB;
+use App\Models\BannerModel;
 
 class HomeController extends Controller
 {
     public function index()
-    {
-        $data['title'] =  'The Home Page';
-        //$title = 'Project | About Us';
-        return view('home.index', $data);
-    }
+{
+    // Fetch all banners where the status is 1
+    $banners = BannerModel::where('status', 1)->get(); // Only fetch banners with status 1
+
+    // Prepare data for the view
+    $data['title'] = 'The Home Page';
+    $data['banners'] = $banners; // Pass banners data to the view
+
+    // Return the view with the data
+    return view('home.index', $data);
+}
+
 
     public function about()
     {

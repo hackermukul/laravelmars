@@ -63,18 +63,20 @@ class DashboardController extends Controller
             $this->data['data_listing'] = $this->data['replies'] = DB::table('grievance_replies')
                 ->join('grievances', 'grievances.id', '=', 'grievance_replies.grievance_id')
                 ->join('department_models', 'grievances.related_to', '=', 'department_models.id')
-                ->select('grievance_replies.*', 'department_models.name as related_to', 'grievances.subject as subject', 'grievances.status as sts','grievances.id as g_id', 'department_models.name as realted_to')
+                ->join('registrations', 'registrations.id', '=', 'grievances.registrations_id')
+                ->select('grievance_replies.*', 'department_models.name as related_to', 'grievances.subject as subject', 'grievances.status as sts',  'registrations.name as customer_name', 'grievances.id as g_id', 'department_models.name as realted_to')
                 ->orderBy('grievance_replies.created_at', 'desc')  // Order by created_at in descending order
-                ->take(4)  // Get the last 4 records
+                ->take(7)  // Get the last 4 records
                 ->get();
         } else {
             $this->data['data_listing'] = $this->data['replies'] = DB::table('grievance_replies')
                 ->join('grievances', 'grievances.id', '=', 'grievance_replies.grievance_id')
+                 ->join('registrations', 'registrations.id', '=', 'grievances.registrations_id')
                 ->join('department_models', 'grievances.related_to', '=', 'department_models.id')
                 ->where('grievances.related_to', $user->department_id)
-                ->select('grievance_replies.*', 'department_models.name as related_to', 'grievances.subject as subject', 'grievances.status as sts','grievances.id as g_id', 'department_models.name as realted_to')
+                ->select('grievance_replies.*', 'department_models.name as related_to', 'grievances.subject as subject', 'grievances.status as sts',  'registrations.name as customer_name', 'grievances.id as g_id', 'department_models.name as realted_to')
                 ->orderBy('grievance_replies.created_at', 'desc')  // Order by created_at in descending order
-                ->take(4)  // Get the last 4 records
+                ->take(7)  // Get the last 4 records
                 ->get();
         }
     

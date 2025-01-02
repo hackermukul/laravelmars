@@ -17,6 +17,8 @@ use App\Http\Controllers\GrievanceController;
 use App\Http\Controllers\GrievanceAdminController;
 use App\Http\Controllers\GrievanceCommitteeController;
 use App\Http\Controllers\GrievanceReportController;
+use App\Http\Controllers\BannerController;
+
 
 
 use App\Http\Controllers\ForgotPasswordController;
@@ -337,6 +339,26 @@ Route::group(['middleware'=> ['auth'], 'prefix'=>'dashboard'],function () {
         Route::post('GetCompleteCountryList', [GrievanceCommitteeController::class,'GetCompleteCountryList'])->name('GetCompleteCountryList');
         Route::post('GetCompleteCategoryListNewPos', [GrievanceCommitteeController::class,'GetCompleteCategoryListNewPos'])->name('GetCompleteCategoryListNewPos');
         Route::post('getState', [GrievanceCommitteeController::class,'getState'])->name('getState');
+
+    });
+
+
+    Route::group(['prefix'=>'banner_module','as'=> 'banner_module.'], function() {
+        Route::get('/', [BannerController::class,'index'])->name('index');
+        Route::get('create', [BannerController::class,'create'])->name('create');
+        Route::post('store', [BannerController::class,'store'])->name('store');
+        Route::get('show/{id}', [BannerController::class,'show'])->name('show');
+        Route::get('{banner_module:slug}/edit', [BannerController::class,'edit'])->name('edit');
+        Route::put('{banner_module:slug}', [BannerController::class,'update'])->name('update');
+        Route::post('updateStatus', [BannerController::class,'updateStatus'])->name('updateStatus');
+        Route::post('search', [BannerController::class,'index'])->name('search');
+        Route::post('chat', [BannerController::class,'chat'])->name('chat');
+
+        Route::post('export-excel', [BannerController::class,'export_excel'])->name('export-excel');
+        Route::get('setPositions', [BannerController::class,'setPositions'])->name('setPositions');
+        Route::post('GetCompleteCountryList', [BannerController::class,'GetCompleteCountryList'])->name('GetCompleteCountryList');
+        Route::post('GetCompleteCategoryListNewPos', [BannerController::class,'GetCompleteCategoryListNewPos'])->name('GetCompleteCategoryListNewPos');
+        Route::post('getState', [BannerController::class,'getState'])->name('getState');
 
     });
     

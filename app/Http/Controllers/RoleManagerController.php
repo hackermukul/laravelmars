@@ -52,6 +52,7 @@ class RoleManagerController extends Controller
 			"2"=>"Company",
 			"3"=>"Employee",
 			"4"=>"Grievance",
+			"5"=>"Banner",
 			
 		);
     }
