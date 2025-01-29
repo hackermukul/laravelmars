@@ -13,7 +13,7 @@
 var startEvent = 'touchstart mousedown',
     moveEvent  = 'touchmove mousemove',
     endEvent   = 'touchend mouseup';
-
+ 
 $(document).ready(function () {
     function parseStyle(css) {
         var objMap = {},

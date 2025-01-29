@@ -106,7 +106,7 @@
                               <div class="row">
                                  <div class="col-md-3">
                                    <div class="form-group">
-                                        <x-label for="Category" class="col-sm-12 label_content px-2 py-0" value="{{ __('Related To') }}" />
+                                        <x-label for="Category" class="col-sm-12 label_content px-2 py-0" value="{{ __('Grievance') }}" />
                                         
                                        <select class="block mt-1 w-full select2" id="grievance" name="grievance" style="height:50px;" required>
                                         <option value="">Please select</option>
@@ -114,7 +114,7 @@
                                         @foreach ($grievance_replies as $grievance)
                                             <option value="{{ $grievance->id }}" 
                                                 @selected(old('grievance') == $grievance->id)>
-                                                {{ $grievance->subject }}
+                                              {{ $grievance->id }} ({{ $grievance->subject }})
                                             </option>
                                         @endforeach
                                     </select>

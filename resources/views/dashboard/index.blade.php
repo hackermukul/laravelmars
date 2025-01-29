@@ -67,7 +67,7 @@
                                        @php($count = 0)
                                        @foreach ($data_listing as $row)
                                        @php($count++)
-                                       <tr>
+                                       <tr class="">
                                           <td>{{ $count }}</td>
                                           
                                         <td><a href="{{ route('grievance.show', ['id' => $row->g_id]) }}">
@@ -116,6 +116,9 @@
 
 
                                           <td>
+                                            <?php if($row->status == 0) { ?>
+    <button class="btn btn-warning blinking-button">New Message</button>
+<?php } ?> 
                                              @switch($row->sts)
                                              @case(1)
                                              <span class="badge badge-success">
@@ -160,4 +163,31 @@
          </div>
       </div>
    </div>
+<!-- Blinking Effect CSS -->
+   <style>
+     /* Define the blinking effect */
+@keyframes blink {
+    0% {
+        background-color: #ffcc00; /* Yellow background */
+    }
+    50% {
+        background-color: #ff6600; /* Orange background */
+    }
+    100% {
+        background-color: #ffcc00; /* Yellow background */
+    }
+}
+
+/* Apply the blinking effect to the button */
+.blinking-button {
+    animation: blink 1s infinite; /* Blink every 1 second */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 5px 15px; /* Smaller padding (height reduced) */
+    font-size: 14px; /* Smaller font size */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+   </style>
 </x-app-layout>

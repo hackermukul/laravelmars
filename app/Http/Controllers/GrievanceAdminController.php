@@ -263,7 +263,24 @@ class GrievanceAdminController extends Controller
 
     $grievanceReply->attachment = $attachmentPath;
     $grievanceReply->save();
-
+    
+    
+        $lastReply = DB::table('grievance_replies')
+        ->where('grievance_replies.grievance_id', $request->id)
+        ->whereNull('grievance_replies.management_id') // Match condition: management_id is null
+        ->orderBy('id', 'desc') // Order by id descending to get the latest record
+        ->limit(1) // Limit the query to only one result
+        ->first();
+   
+   
+    if ($lastReply) {
+    // Update the status field in the grievance_replies table based on the last reply's id
+            DB::table('grievance_replies')
+                ->where('id', $lastReply->id)
+                ->update(['status' => 1]);  // Assuming the status field exists and you want to set it to 1
+        }
+    
+                
     // Update only the status field in the grievances table
     $grievance->status = $validated['status'];
     $grievance->save();

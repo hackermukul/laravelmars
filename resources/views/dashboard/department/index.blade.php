@@ -106,6 +106,10 @@
                           @if($user_access->export_data==1)
                         <button type="button" class="btn btn-success btn-sm export_excel"><i class="fas fa-file-excel"></i> Export</button>
                          @endif
+                         <button type="button" class="btn btn-dark btn-sm" onclick="validateRecordsDelete()">
+    <i class="fas fa-ban"></i> Delete
+</button>
+
                      </div>
                   </div>
                   <!-- /.card-header -->
@@ -230,6 +234,19 @@
               document.ptype_list_form.submit();
           }
       }
+       function validateRecordsDelete() // done
+      {
+          if (validateCheckedRecordsArray()) {
+              //alert("Please select any record to Delete.");
+              toastrDefaultErrorFunc("Please select any record to Delete.");
+              document.getElementById("sel_recds1").focus();
+              return false;
+          } else {
+              document.ptype_list_form.task.value = 'delete';
+              document.ptype_list_form.submit();
+          }
+      }
+
    </script>
    <script>
 window.addEventListener('load' , function(){

@@ -47,7 +47,7 @@
                      <div class="form-group row">
                         <!-- Name Field -->
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                           <x-label for="name" class="label_content px-2 py-0" value="Name (*)" />
+                           <x-label for="name" class="label_content px-2 py-0" value="Committee Name (*)" />
                            <x-input id="name" type="text" name="name" :value="old('name')" required autofocus class="block mt-1 w-full" />
                            @error('name')
                               <div class="error" style="color: red">{{ $message }}</div>
@@ -56,7 +56,7 @@
                         
                         <!-- Designation Field -->
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                           <x-label for="designation" class="label_content px-2 py-0" value="Designation (*)" />
+                           <x-label for="designation" class="label_content px-2 py-0" value="Committee head (*)" />
                            <x-input id="designation" type="text" name="designation" :value="old('designation')" required class="block mt-1 w-full" />
                            @error('designation')
                               <div class="error" style="color: red">{{ $message }}</div>
@@ -65,7 +65,7 @@
 
                         <!-- Grievance Related To Field -->
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                           <x-label for="grievance_related_to" class="label_content px-2 py-0" value="Grievance Related To (*)" />
+                           <x-label for="grievance_related_to" class="label_content px-2 py-0" value="Committee Members(*)" />
                            <x-input id="grievance_related_to" type="text" name="grievance_related_to" :value="old('grievance_related_to')" required class="block mt-1 w-full" />
                            @error('grievance_related_to')
                               <div class="error" style="color: red">{{ $message }}</div>

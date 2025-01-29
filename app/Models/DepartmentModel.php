@@ -86,6 +86,7 @@ class DepartmentModel extends Model
 				$query->where("urm.status" ,  $params['record_status']);
 			}
 		}
+			$query->where('urm.is_deleted',0);
 		if(!empty($params['field_value']) && !empty($params['field_name']))
 		{
             $query->where($params['field_name'], 'like', '%' . $params['field_value'] . '%');

@@ -64,6 +64,7 @@ class DashboardController extends Controller
                 ->join('grievances', 'grievances.id', '=', 'grievance_replies.grievance_id')
                 ->join('department_models', 'grievances.related_to', '=', 'department_models.id')
                 ->join('registrations', 'registrations.id', '=', 'grievances.registrations_id')
+                 ->whereNull('grievance_replies.management_id') // Match condition: management_id is null
                 ->select('grievance_replies.*', 'department_models.name as related_to', 'grievances.subject as subject', 'grievances.status as sts',  'registrations.name as customer_name', 'grievances.id as g_id', 'department_models.name as realted_to')
                 ->orderBy('grievance_replies.created_at', 'desc')  // Order by created_at in descending order
                 ->take(7)  // Get the last 4 records
@@ -74,6 +75,7 @@ class DashboardController extends Controller
                  ->join('registrations', 'registrations.id', '=', 'grievances.registrations_id')
                 ->join('department_models', 'grievances.related_to', '=', 'department_models.id')
                 ->where('grievances.related_to', $user->department_id)
+                 ->whereNull('grievance_replies.management_id') // Match condition: management_id is null
                 ->select('grievance_replies.*', 'department_models.name as related_to', 'grievances.subject as subject', 'grievances.status as sts',  'registrations.name as customer_name', 'grievances.id as g_id', 'department_models.name as realted_to')
                 ->orderBy('grievance_replies.created_at', 'desc')  // Order by created_at in descending order
                 ->take(7)  // Get the last 4 records
